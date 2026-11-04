@@ -13,6 +13,7 @@ The user authorized the earlier verified brief as the content source because no 
 - GitHub: https://github.com/Atta-Ur-Rehman05
 - LinkedIn: https://www.linkedin.com/in/atta-ur-rehman-11a351309/
 - Email: profatta3@gmail.com
+- WhatsApp: +92 304 8881116 — https://wa.me/923048881116 (supplied by the owner)
 - Resume: not supplied; no active download link
 
 ## Background and interests

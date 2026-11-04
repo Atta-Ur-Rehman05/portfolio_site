@@ -3,6 +3,7 @@ export const profile = {
   title: "AI Application Engineer Intern",
   company: "Hexoforge LLC",
   email: "profatta3@gmail.com",
+  whatsapp: "https://wa.me/923048881116",
   github: "https://github.com/Atta-Ur-Rehman05",
   linkedin: "https://www.linkedin.com/in/atta-ur-rehman-11a351309/",
   resume: null as string | null,

@@ -23,6 +23,9 @@ export function Contact({ directory = false }: { directory?: boolean }) {
         <Button href={`mailto:${profile.email}`} icon="mail">
           {directory ? "Get in Touch" : "Send an Email"}
         </Button>
+        <Button href={profile.whatsapp} icon="message" secondary>
+          WhatsApp
+        </Button>
         <Button
           href={directory ? "/" : profile.github}
           icon={directory ? "home" : "code"}
