@@ -10,13 +10,17 @@ export function HomePage() {
     <>
       <section className="container hero">
         <div className="hero-copy">
+          <p className="hero-name">{profile.name}</p>
+          <p className="hero-role">
+            AI Application Engineering · Backend Engineering
+          </p>
           <span className="hero-status">
             <i /> {profile.title} @ {profile.company}
           </span>
           <h1>
             Building backend systems & <span>AI-powered applications.</span>
           </h1>
-          <p>{profile.description}</p>
+          <p className="hero-description">{profile.description}</p>
           <div className="hero-buttons">
             <Button href="/projects">
               View projects <Icon name="right" size={16} />
@@ -42,11 +46,7 @@ export function HomePage() {
       <section className="container section about" id="about">
         <div>
           <Label number="01">About Me</Label>
-          <h2>
-            Engineering curiosity
-            <br />
-            into practical solutions.
-          </h2>
+          <h2>Curious about how things work.</h2>
           <div className="about-body">
             <Image
               className="about-portrait"
@@ -62,61 +62,38 @@ export function HomePage() {
               ))}
             </div>
           </div>
-          <div className="about-footer">
-            <span>▸ Undergrad 2024–2028</span>
-            <span>◈ AI Engineering Focus</span>
-          </div>
         </div>
-        <div className="about-grid">
-          {[
-            {
-              n: "01 / ROLE",
-              icon: "terminal",
-              title: "Current Role",
-              text: profile.title,
-              sub: profile.company,
-            },
-            {
-              n: "02 / INSTITUTION",
-              icon: "school",
-              title: "University",
-              text: profile.education.university,
-              sub: "2024 — 2028",
-            },
-            {
-              n: "03 / SPECIALIZATION",
-              icon: "layers",
-              title: "Core Focus",
-              text: "Backend Systems & AI Engineering",
-              sub: "Hands-on implementation",
-            },
-            {
-              n: "04 / INTERESTS",
-              icon: "database",
-              title: "Primary Interests",
-              text: "RAG Systems & Vector Stores",
-              sub: "Learning through building",
-            },
-          ].map((c) => (
-            <div className="info-card" key={c.n}>
-              <div className="info-top">
-                <span>{c.n}</span>
-                <Icon name={c.icon} />
-              </div>
-              <h3>{c.title}</h3>
-              <p>{c.text}</p>
-              <small>{c.sub}</small>
-            </div>
-          ))}
-        </div>
+        <aside
+          className="about-highlights"
+          aria-label="Current project interests"
+        >
+          <Link href="/projects/intellex" className="about-highlight">
+            <span className="micro-label">Currently building</span>
+            <h3>
+              Intellex <Icon name="right" size={18} />
+            </h3>
+            <p>
+              A document workspace, from file upload to chunks and embeddings.
+            </p>
+            <span className="text-link">Explore the project</span>
+          </Link>
+          <Link href="/projects/fastapi-journey" className="about-highlight">
+            <span className="micro-label">Learning through practice</span>
+            <h3>
+              Backend fundamentals <Icon name="right" size={18} />
+            </h3>
+            <p>
+              API validation, authentication, and database-backed applications.
+            </p>
+            <span className="text-link">See the exercises</span>
+          </Link>
+        </aside>
       </section>
       <section className="container section" id="experience">
         <SectionHeading
           number="02"
           label="Experience"
-          title="Where learning meets real-world engineering."
-          description="Practical experience in AI application development."
-          aside={<Status>Current Internship</Status>}
+          title="AI application engineering in practice."
         />
         <article className="experience-card">
           <div className="experience-header">
@@ -137,8 +114,8 @@ export function HomePage() {
             </span>
           </div>
           <div className="experience-body">
-            <span className="micro-label">Scope of contribution</span>
-            <h4>AI application development</h4>
+            <span className="micro-label">Current contribution</span>
+            <h4>RAG chatbot applications</h4>
             <ul className="experience-scope">
               <li>{profile.experience.contribution}</li>
               <li>AI integration for e-commerce applications.</li>
@@ -152,8 +129,8 @@ export function HomePage() {
         <SectionHeading
           number="03"
           label="Selected Work"
-          title="Things I’ve built and explored."
-          description="A selection of backend engineering projects, AI experiments, and ongoing development work."
+          title="Projects with source you can review."
+          description="One active workspace project, alongside focused backend and AI learning repositories."
           aside={
             <Link className="text-link" href="/projects">
               View All Projects <Icon name="external" size={15} />
@@ -171,24 +148,27 @@ export function HomePage() {
         <SectionHeading
           number="04"
           label="Technical Toolkit"
-          title="Technologies I work with and explore."
-          description="Practical frameworks, databases, and areas of continued learning."
+          title="Tools, backed by practice."
+          description="Project implementation, technical background, and continued exploration are labeled separately."
         />
         <div className="skill-grid">
-          {skillGroups.map((s, i) => (
+          {skillGroups.map((s) => (
             <article
-              className={`skill-card ${i === 4 ? "wide" : ""}`}
+              className={`skill-card ${s.kind === "exploring" ? "wide exploring" : ""}`}
               key={s.name}
             >
               <h3>
                 <Icon name={s.icon} />
                 {s.name}
               </h3>
-              {i === 4 && (
-                <p>Technologies I’m exploring alongside my core background:</p>
-              )}
+              <span className="skill-level">{s.level}</span>
               <Tags items={s.items} />
-              <span className="skill-caption">{s.caption}</span>
+              <p className="skill-caption">{s.caption}</p>
+              {s.href && (
+                <Link className="text-link skill-source" href={s.href}>
+                  See project context <Icon name="right" size={14} />
+                </Link>
+              )}
             </article>
           ))}
         </div>

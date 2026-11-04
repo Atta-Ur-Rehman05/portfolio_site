@@ -8,11 +8,10 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/atta-ur-rehman-11a351309/",
   resume: null as string | null,
   description:
-    "I’m Atta Ur Rehman, a Software Engineering undergraduate and AI Application Engineer Intern at Hexoforge LLC. I work on RAG-based applications and explore backend engineering, APIs, and intelligent software systems.",
+    "Software Engineering undergraduate and AI Application Engineer Intern at Hexoforge LLC, working on RAG chatbot applications and building a foundation in backend engineering.",
   about: [
-    "I am an undergraduate Software Engineering student at Mirpur University of Science & Technology (MUST), pursuing my degree from October 2024 to July 2028. Alongside academia, I serve as an AI Application Engineer Intern at Hexoforge LLC.",
-    "I’m interested in how software components work together: clear API contracts, useful AI integrations, and reliable backend systems. I learn through hands-on implementation with Python, FastAPI, and RAG applications.",
-    "My goal is to keep improving the quality of my code while building a stronger foundation in software engineering.",
+    "I’m studying Software Engineering at MUST and learning by building. I’m drawn to the backend: how an API handles a request, how data moves through a system, and where AI can make an application more useful.",
+    "My projects give me a place to practice with Python and FastAPI, explore document processing and AI integrations, and keep improving the clarity of my code.",
   ],
   experience: {
     start: "April 2026",
@@ -493,37 +492,53 @@ export const projects: Project[] = [
 export const skillGroups = [
   {
     icon: "server",
-    name: "Backend Engineering",
-    items: ["Python", "FastAPI", "API Development"],
-    caption: "Application development",
+    name: "Backend",
+    kind: "practice",
+    level: "Project implementation",
+    items: ["Python", "FastAPI", "Pydantic", "SQLAlchemy"],
+    caption:
+      "API routes, validation, authentication, and persistence in the reviewed project source.",
+    href: "/projects/fastapi-journey",
   },
   {
     icon: "brain",
-    name: "AI Engineering",
-    items: [
-      "Retrieval-Augmented Generation (RAG)",
-      "AI Applications",
-      "Vector Databases",
-    ],
-    caption: "Internship & learning focus",
+    name: "AI applications",
+    kind: "practice",
+    level: "Project implementation",
+    items: ["LLM APIs", "Tool Calling", "Text Chunking", "Embeddings"],
+    caption:
+      "Document preparation in Intellex; model interaction and tool-calling exercises in RAG Journey.",
+    href: "/projects/rag-journey",
   },
   {
     icon: "web",
-    name: "Frontend",
+    name: "Interfaces",
+    kind: "practice",
+    level: "Portfolio & project work",
     items: ["React", "JavaScript", "HTML", "CSS"],
-    caption: "Interface layer",
+    caption:
+      "The interface layer for web applications. This portfolio also uses Next.js, TypeScript, and Tailwind CSS.",
+    href: "/projects",
   },
   {
     icon: "database",
-    name: "Databases",
-    items: ["MongoDB"],
-    caption: "Technical background",
+    name: "Data & storage",
+    kind: "background",
+    level: "Project source & background",
+    items: ["PostgreSQL", "pgvector", "MongoDB"],
+    caption:
+      "PostgreSQL and pgvector appear in Intellex source. MongoDB is part of my technical background.",
+    href: "/projects/intellex",
   },
   {
     icon: "compass",
-    name: "Additional Technologies of Interest",
-    items: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    caption: "Exploration & continued learning",
+    name: "Continued exploration",
+    kind: "exploring",
+    level: "Learning direction",
+    items: ["Retrieval Systems", "Vector Search", "System Design"],
+    caption:
+      "Developing a deeper understanding of retrieval quality, storage choices, and architectural tradeoffs.",
+    href: "",
   },
 ];
 export const learning = [

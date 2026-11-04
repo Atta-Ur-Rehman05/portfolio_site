@@ -9,13 +9,13 @@ const links = [
   ["About", "/#about"],
   ["Experience", "/#experience"],
   ["Skills", "/#skills"],
-  ["Education", "/#education"],
   ["Contact", "/#contact"],
 ];
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const button = useRef<HTMLButtonElement>(null);
+  const header = useRef<HTMLElement>(null);
   useEffect(() => {
     if (!open) return;
     const close = (e: KeyboardEvent) => {
@@ -25,17 +25,36 @@ export function Header() {
       }
     };
     window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
+    const dismissOutside = (event: PointerEvent) => {
+      if (
+        event.target instanceof Node &&
+        !header.current?.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener("pointerdown", dismissOutside);
+    return () => {
+      window.removeEventListener("keydown", close);
+      window.removeEventListener("pointerdown", dismissOutside);
+    };
   }, [open]);
   return (
-    <header className="site-header">
+    <header
+      className="site-header"
+      ref={header}
+      onBlur={(event) => {
+        if (
+          event.relatedTarget instanceof Node &&
+          !event.currentTarget.contains(event.relatedTarget)
+        ) {
+          setOpen(false);
+        }
+      }}
+    >
       <div className="header-inner">
         <Link href="/" className="brand" aria-label="Atta Ur Rehman home">
-          <span className="monogram" aria-hidden="true">
-            AR<span>_</span>
-          </span>
           <span>{profile.name}</span>
-          <span className="brand-tag">AI / Backend</span>
         </Link>
         <nav
           id="site-navigation"
@@ -73,13 +92,6 @@ export function Header() {
               Resume <Icon name="file" size={14} />
             </a>
           )}
-          <a
-            className="profile-icon"
-            href={profile.linkedin}
-            aria-label="Atta Ur Rehman on LinkedIn"
-          >
-            <Icon name="user" size={17} />
-          </a>
           <button
             type="button"
             ref={button}

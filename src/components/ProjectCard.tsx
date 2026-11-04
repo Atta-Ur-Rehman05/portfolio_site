@@ -18,10 +18,7 @@ export function ProjectCard({
     >
       <div className="project-card-copy">
         <div className="project-top">
-          <span>
-            <b>{project.code}</b>{" "}
-            <span className="project-alias">{project.alias}</span>
-          </span>
+          {featured && <span className="project-kind">Featured project</span>}
           <Status>{project.status}</Status>
         </div>
         <span className="project-category">{project.eyebrow}</span>
@@ -32,7 +29,15 @@ export function ProjectCard({
         <p>{project.summary}</p>
         {(featured || compact) && <Tags items={project.tags} />}
       </div>
-      <Diagram kind={project.diagram} small={compact} />
+      <figure className="project-visual">
+        <Diagram kind={project.diagram} small={compact} />
+        <figcaption>
+          Conceptual illustration
+          {project.slug === "intellex"
+            ? " · retrieval and chat are planned"
+            : " · learning concepts"}
+        </figcaption>
+      </figure>
       {!featured && !compact && <Tags items={project.tags} />}
       <div className="project-actions">
         <Link

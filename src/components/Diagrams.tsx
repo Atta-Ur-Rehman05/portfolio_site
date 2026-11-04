@@ -177,56 +177,32 @@ export function Diagram({
 }
 export function HeroDiagram() {
   return (
-    <div className="hero-terminal">
-      <div className="terminal-title">
-        <span className="traffic">
-          <i />
-          <i />
-          <i />
-        </span>
-        <span>How retrieval-augmented AI works</span>
-        <span className="terminal-badge">CONCEPT</span>
-      </div>
-      <div className="hero-topology">
-        <div className="input-nodes">
-          <span>
-            DOCUMENTS<small>Source material</small>
-          </span>
-          <span>
-            QUESTION<small>User input</small>
-          </span>
-          <span>
-            CONTEXT<small>Retrieved passages</small>
-          </span>
-        </div>
-        <svg aria-hidden="true" viewBox="0 0 110 170">
-          <path
-            d="m0 25 40 0 50 60h20M0 85h110M0 145h40l50-60"
-            fill="none"
-            stroke="#7bd0ff"
-            strokeDasharray="3 3"
-          />
-        </svg>
-        <div className="pipeline-node">
-          <Icon name="brain" size={24} />
-          <span>RAG WORKFLOW</span>
-        </div>
-        <span className="topology-line" />
-        <div className="output-node">
-          AI RESPONSE<small>Answer with context</small>
-        </div>
-      </div>
-      <div className="terminal-metadata">
-        <span>
-          Architecture<b>RAG concepts</b>
-        </span>
-        <span>
-          Core interest<b>Backend APIs</b>
-        </span>
-        <span>
-          Learning track<b>Retrieval systems</b>
-        </span>
-      </div>
-    </div>
+    <figure className="hero-terminal">
+      <figcaption className="hero-diagram-heading">
+        <span>Conceptual workflow</span>
+        <strong>From documents to useful context.</strong>
+      </figcaption>
+      <ol className="hero-flow">
+        {[
+          ["file", "Documents", "The source material"],
+          ["search", "Relevant context", "Passages related to a question"],
+          ["brain", "AI response", "An answer informed by that context"],
+        ].map(([icon, title, description], index) => (
+          <li key={title}>
+            <span className="hero-flow-icon">
+              <Icon name={icon} size={22} />
+            </span>
+            <div>
+              <strong>{title}</strong>
+              <span>{description}</span>
+            </div>
+            <span className="hero-flow-number" aria-hidden="true">
+              0{index + 1}
+            </span>
+          </li>
+        ))}
+      </ol>
+      <p className="hero-diagram-note">Retrieval-augmented generation (RAG)</p>
+    </figure>
   );
 }

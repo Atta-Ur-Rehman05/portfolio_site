@@ -55,6 +55,14 @@ The public deployment URL is `https://portfolio-site-lilac-eight-30.vercel.app`.
 
 The November 2026 review preserved the dark theme and core sections, clarified project/contact actions and internship scope, added source-linked implementation details, improved readable text and interaction targets, and added reduced-motion-aware entry animation. Full case-study data stays out of the project directory's interactive filtering props.
 
-Validation passed for lint, TypeScript, the production export, six routes, 199 links, and 51 asset references. All ten pinned source files were accessible. The browser review stopped because computer use could not reliably identify the active URL, so responsive visual QA, screen-reader interaction, and Lighthouse scores remain unverified. Check those before publishing.
+Validation passed for lint, TypeScript, the production export, six routes, 178 links, and 51 asset references. All ten pinned source files were accessible. The latest browser inventory reported that the browser access host is unavailable. Responsive visual QA, screen-reader interaction, runtime menu testing, and Lighthouse scores remain unverified. GitHub and WhatsApp links returned HTTP 200; LinkedIn returned HTTP 999 and could not be verified automatically. Check these before publishing.
 
 Keep `package-lock.json` for reproducible installations and preserve bundled font licenses. Generated dependencies, build caches, and exports are ignored by Git. Any archives under `outputs/` are historical backups and are not deployment inputs.
+
+## Modernization follow-up
+
+The hero now introduces the owner and engineering focus directly. Navigation and About content are shorter, skills distinguish project implementation from background and exploration, and case studies prioritize current scope, technical decisions, and source evidence. Conceptual illustrations are explicitly labeled and optional in case studies. No authentic project screenshot or resume PDF was found in the supplied assets or reviewed repositories.
+
+Shared card surfaces, border radii, touch targets, and narrow layouts were refined. The mobile menu dismisses on Escape, outside pointer interaction, and keyboard focus leaving the header. Scroll motion uses progressive CSS enhancement and respects reduced-motion preferences. Obsolete selectors from the previous case-study layout were removed.
+
+The live homepage was reachable, but its canonical URL still pointed to the older Vercel hostname at review time. The deployment environment must use the public URL documented above. These local changes have not been published.
