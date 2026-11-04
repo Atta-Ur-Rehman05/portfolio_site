@@ -2845,6 +2845,224 @@ a:hover {
     padding-bottom: 55px;
   }
 }
+/* Readable content and consistent interaction targets across page variants. */
+.hero h1 {
+  font-size: clamp(2.35rem, 4.4vw, 4rem);
+  text-wrap: balance;
+}
+.hero-buttons,
+.project-actions {
+  flex-wrap: wrap;
+}
+.button,
+.project-actions .button,
+.header-actions .button {
+  min-height: 44px;
+  font-size: 12px;
+}
+.site-nav a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+}
+.hero-copy > p,
+.about-body,
+.project-card .project-card-copy > p,
+.directory-grid .project-card-copy > p,
+.detail-article > section > p,
+.contact-panel p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.hero-signals {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.hero-signals a {
+  padding-block: 8px;
+}
+.experience-scope {
+  padding-left: 20px;
+  margin: 14px 0 20px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.experience-scope li + li {
+  margin-top: 8px;
+}
+.project-card:focus-within {
+  border-color: var(--cyan);
+}
+.project-top {
+  flex-wrap: wrap;
+}
+.compact-project .project-top {
+  display: flex;
+}
+.compact-project .project-top > span:first-child {
+  display: none;
+}
+.project-card .project-category {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.project-card .project-name h3 {
+  font-size: clamp(24px, 2.5vw, 32px);
+}
+.project-card .project-actions {
+  gap: 12px;
+}
+.project-card .diagram {
+  overflow: hidden;
+}
+.featured-project .diagram::after {
+  content: "Conceptual workflow · retrieval and chat are planned";
+  display: block;
+  padding: 0 12px 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+.detail-title-row > div,
+.detail-article,
+.about > div {
+  min-width: 0;
+}
+.detail-actions,
+.contact-buttons {
+  flex-wrap: wrap;
+}
+.detail-article .inset p,
+.detail-article .inset-pair p,
+.detail-article .progress-item p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.detail-article .stack-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.stack-grid h3 > span {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.evidence-panel {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid #8aebff30;
+  border-radius: 8px;
+  background: var(--panel);
+}
+.evidence-heading h2 {
+  font-size: 23px;
+}
+.evidence-heading p {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.evidence-heading a {
+  color: var(--light-cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.evidence-link {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 18px;
+  background: var(--deep);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  transition:
+    border-color 180ms,
+    background 180ms;
+}
+.evidence-link:hover,
+.evidence-link:focus-visible {
+  border-color: var(--cyan);
+  background: var(--inset);
+}
+.evidence-link strong {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text);
+}
+.evidence-link span,
+.review-limits {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.evidence-link small {
+  margin-top: auto;
+  color: var(--light-cyan);
+  font-size: 12px;
+}
+.review-limits {
+  margin: 20px 0 0;
+  padding-left: 18px;
+}
+.review-limits li + li {
+  margin-top: 6px;
+}
+.project-filters button {
+  min-height: 44px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy,
+  .detail-title-row {
+    animation: content-enter 420ms ease-out both;
+  }
+  @keyframes content-enter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+@media (max-width: 640px) {
+  .evidence-panel {
+    padding: 18px;
+  }
+  .evidence-grid,
+  .detail-article .stack-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-buttons .button {
+    flex: 1 1 auto;
+  }
+  .project-card .project-actions .button {
+    flex: 1 1 auto;
+  }
+  .header-actions .button {
+    font-size: 10px;
+    padding-inline: 10px;
+  }
+  .hero-status {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .hero-status i {
+    flex-shrink: 0;
+  }
+  .site-nav.is-open {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -2854,5 +3072,9 @@ a:hover {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+  .button:hover,
+  .project-card:hover {
+    transform: none;
   }
 }

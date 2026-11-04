@@ -7,11 +7,7 @@ export function Contact({ directory = false }: { directory?: boolean }) {
       id="contact"
     >
       <div>
-        <Label>
-          {directory
-            ? "Next discussions & collaboration"
-            : "07 // Initiate transmission"}
-        </Label>
+        <Label number={directory ? undefined : "07"}>Contact</Label>
         <h2>
           {directory
             ? "Interested in collaborating or discussing technical ideas?"
@@ -35,13 +31,13 @@ export function Contact({ directory = false }: { directory?: boolean }) {
         </Button>
         {!directory && (
           <Button href={profile.linkedin} icon="network" secondary>
-            LinkedIn Connection
+            LinkedIn
           </Button>
         )}
         {profile.resume && (
-          <Button href={profile.resume} icon="file" secondary>
-            Resume
-          </Button>
+          <a className="button secondary" href={profile.resume} download>
+            Download resume
+          </a>
         )}
       </div>
       {!directory && (

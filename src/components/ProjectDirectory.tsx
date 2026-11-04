@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { projects, profile } from "../data/content";
-import type { Category } from "../data/content";
+import { profile } from "../data/content";
+import type { Category, ProjectPreview } from "../data/content";
 import { ProjectCard } from "./ProjectCard";
 import { Contact } from "./Contact";
 import { Icon, Label } from "./ui";
@@ -12,7 +12,7 @@ const filters: ["All Projects", ...Category[]] = [
   "Backend Engineering",
   "Engineering Learning",
 ];
-export function ProjectDirectory() {
+export function ProjectDirectory({ projects }: { projects: ProjectPreview[] }) {
   const [filter, setFilter] = useState<string>("All Projects");
   const visible = projects.filter(
     (p) =>
@@ -36,10 +36,7 @@ export function ProjectDirectory() {
       </div>
       <div className="directory-heading">
         <div>
-          <Label>
-            Portfolio directory{" "}
-            <span className="muted">{"// SYSTEM_DISCOVERY"}</span>
-          </Label>
+          <Label>Selected work</Label>
           <h1>Projects & Experiments</h1>
           <p>
             Exploring backend systems, AI applications, and software engineering
@@ -48,7 +45,7 @@ export function ProjectDirectory() {
         </div>
         <div className="focus-panel">
           <span>
-            System Focus<strong>AI & Backend</strong>
+            Focus<strong>AI & Backend</strong>
           </span>
           <span>
             Primary Language<strong>Python</strong>
@@ -62,6 +59,7 @@ export function ProjectDirectory() {
       >
         {filters.map((f) => (
           <button
+            type="button"
             key={f}
             aria-pressed={filter === f}
             onClick={() => setFilter(f)}
@@ -97,7 +95,7 @@ export function ProjectDirectory() {
         </div>
         <a className="button secondary" href={profile.github}>
           <Icon name="terminal" size={15} />
-          Inspect GitHub Repositories
+          View GitHub repositories
         </a>
       </aside>
       <Contact directory />

@@ -18,6 +18,12 @@ export async function generateMetadata({
     title: p?.name ?? "Project not found",
     description: p?.summary,
     openGraph: {
+      url: `/projects/${slug}`,
+      title: `${p?.name ?? "Project"} | Atta Ur Rehman`,
+      description: p?.summary,
+    },
+    twitter: {
+      card: "summary",
       title: `${p?.name ?? "Project"} | Atta Ur Rehman`,
       description: p?.summary,
     },

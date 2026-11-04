@@ -45,4 +45,16 @@ For manual deployment, upload only the contents of `out/`. `next start` does not
 
 Edit `src/data/content.ts` to update content. Adding a project there updates the directory, generated routes, and sitemap. The About photo is `public/atta photo.jpg`.
 
+## Resume and case-study maintenance
+
+No resume PDF is currently included. To enable a real download, add the approved PDF under `public/resume/`, then set `profile.resume` in `src/data/content.ts` to its URL (for example, `/resume/atta-ur-rehman.pdf`). Header, hero, and contact downloads appear only when that value is set. Run the build and verification; local PDF links are checked for an existing file and a PDF header.
+
+The three main case studies include source references pinned to reviewed Git commits, a review date, and implementation limitations. Update those references and claims together when reviewing newer repository revisions. Source presence does not establish that a backend runs successfully or that its tests pass.
+
+The public deployment URL is `https://portfolio-site-lilac-eight-30.vercel.app`. Set `NEXT_PUBLIC_SITE_URL` to that exact origin in Vercel's Production environment and redeploy; an older environment value overrides the source default.
+
+The November 2026 review preserved the dark theme and core sections, clarified project/contact actions and internship scope, added source-linked implementation details, improved readable text and interaction targets, and added reduced-motion-aware entry animation. Full case-study data stays out of the project directory's interactive filtering props.
+
+Validation passed for lint, TypeScript, the production export, six routes, 199 links, and 51 asset references. All ten pinned source files were accessible. The browser review stopped because computer use could not reliably identify the active URL, so responsive visual QA, screen-reader interaction, and Lighthouse scores remain unverified. Check those before publishing.
+
 Keep `package-lock.json` for reproducible installations and preserve bundled font licenses. Generated dependencies, build caches, and exports are ignored by Git. Any archives under `outputs/` are historical backups and are not deployment inputs.

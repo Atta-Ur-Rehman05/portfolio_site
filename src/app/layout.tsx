@@ -20,6 +20,7 @@ const inter = localFont({
 const mono = localFont({
   src: "./fonts/jetbrains-mono.woff2",
   variable: "--font-mono",
+  preload: false,
   display: "swap",
   weight: "100 900",
 });
@@ -34,6 +35,8 @@ export const metadata: Metadata = {
   },
   description,
   openGraph: {
+    url: siteUrl,
+    siteName: "Atta Ur Rehman — Portfolio",
     title: "Atta Ur Rehman | AI & Backend Engineering",
     description,
     type: "website",

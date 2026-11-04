@@ -50,7 +50,27 @@ export type Project = {
   approach: { title: string; description: string }[];
   progress: { title: string; description: string; status: string }[];
   notes: { title: string; description: string }[];
+  evidence?: {
+    commit: string;
+    reviewed: string;
+    items: { title: string; description: string; path: string }[];
+    limits: string[];
+  };
 };
+export type ProjectPreview = Pick<
+  Project,
+  | "slug"
+  | "name"
+  | "code"
+  | "alias"
+  | "eyebrow"
+  | "status"
+  | "categories"
+  | "summary"
+  | "tags"
+  | "repo"
+  | "diagram"
+>;
 export const projects: Project[] = [
   {
     slug: "intellex",
@@ -61,83 +81,122 @@ export const projects: Project[] = [
     status: "In Development",
     categories: ["AI Applications"],
     summary:
-      "An AI-oriented knowledge workspace project currently under development. Exploring document organization, retrieval, and AI-assisted interaction.",
-    tags: ["Python", "RAG", "FastAPI", "React"],
+      "A document workspace with authentication, PDF/TXT processing, and stored embeddings. Retrieval and AI chat remain planned.",
+    tags: ["FastAPI", "React", "PostgreSQL", "Embeddings"],
     repo: "intellex",
     diagram: "knowledge",
     overview:
-      "Intellex is an AI-oriented knowledge workspace under active development. Its public README describes a document-oriented platform and a modular monolith, with separate frontend and backend directories. The project is presented here as ongoing engineering work, rather than a finished product.",
+      "Intellex is an ongoing knowledge workspace with a FastAPI backend and React interface. The reviewed backend contains authentication, user-scoped document management, and a service that turns PDF/TXT uploads into chunks and embeddings. End-to-end retrieval and AI chat are next steps.",
     motivation:
-      "Explore how a knowledge workspace can help organize information and make documents easier to work with through retrieval-augmented AI. The current focus is learning through implementation and developing the project incrementally.",
+      "Build the document foundation for an AI workspace: accept files, associate them with their owner, and prepare their contents for later retrieval.",
     stack: [
       {
-        name: "FastAPI & Python",
-        label: "Backend",
+        name: "FastAPI & SQLAlchemy",
+        label: "API and persistence",
         description:
-          "Backend framework described in the repository’s architecture.",
+          "Routes delegate to services and repositories for authentication and document management.",
+      },
+      {
+        name: "PostgreSQL & pgvector",
+        label: "Current storage model",
+        description:
+          "The document-chunk model stores content, source metadata, and embedding vectors using pgvector.",
+      },
+      {
+        name: "Sentence Transformers",
+        label: "Embedding provider",
+        description:
+          "A provider loads the configured model and generates normalized document embeddings.",
       },
       {
         name: "React & Vite",
-        label: "Frontend",
+        label: "Interface",
         description:
-          "Frontend tooling described in the repository; this portfolio itself uses Next.js.",
-      },
-      {
-        name: "PostgreSQL & Qdrant",
-        label: "Documented architecture",
-        description:
-          "Relational and vector storage included in the README’s architecture direction; completion is not asserted.",
+          "The frontend contains authentication, dashboard, document, and chat pages. A chat interface alone does not establish a working chat backend.",
       },
     ],
     approach: [
       {
-        title: "A. Separate frontend and backend",
+        title: "User-scoped document requests",
         description:
-          "The repository separates the interface and backend code. The README describes a modular monolith rather than an independently deployed microservices architecture.",
+          "Authenticated routes support upload, listing, retrieval, rename, and deletion. Document lookups use both document ID and user ID.",
       },
       {
-        title: "B. Document-oriented knowledge workflow",
+        title: "Processing during upload",
         description:
-          "Uploading, organizing, searching, and interacting with documents are the workspace’s stated direction. The diagram is conceptual and does not certify an implemented end-to-end pipeline.",
+          "The upload service invokes processing directly: PDF/TXT loading, cleaning, overlapping chunks, embedding generation, and persistence.",
       },
       {
-        title: "C. Supporting infrastructure",
+        title: "Current storage and future infrastructure",
         description:
-          "Redis, object storage, background workers, and LLM integration are listed in the README. Their presence in the architectural plan is distinct from verified deployment readiness.",
+          "Files currently use local storage and embeddings use pgvector. Qdrant, Redis, object storage, and background workers appear in the architecture direction; they are not presented as integrated features.",
       },
     ],
     progress: [
       {
-        title: "Knowledge workspace",
+        title: "Authentication and documents",
         description:
-          "Active project development; implementation details can be reviewed in the public repository.",
-        status: "In Development",
+          "Register/login/current-user routes and document management handlers are present in the source.",
+        status: "Source verified",
       },
       {
-        title: "Architecture direction",
+        title: "Document preparation",
         description:
-          "A modular monolith is documented, with frontend and backend directories.",
-        status: "Documented",
+          "The processing service creates chunks and embeddings and records ready/failed document states.",
+        status: "Source verified",
       },
       {
-        title: "Production release",
+        title: "Retrieval and AI chat",
         description:
-          "No production deployment or release is claimed on this portfolio.",
-        status: "Not listed",
+          "The reviewed chat module initializes a router but defines no request handlers.",
+        status: "Planned",
       },
     ],
     notes: [
       {
-        title: "Architecture and implementation",
+        title: "Make processing failures visible",
         description:
-          "An architectural plan communicates intent. Source code and working demonstrations are needed to establish the current implementation scope.",
+          "The processing service records failure states and rolls back database work on errors. Embedding-model availability remains a runtime dependency.",
       },
       {
-        title: "Learning in public",
+        title: "Source can advance beyond documentation",
         description:
-          "The repository is the best place to review the evolving implementation. No performance benchmarks or completion percentages are asserted.",
+          "The backend README describes an earlier authentication phase. This review follows the newer document and embedding source files.",
       },
     ],
+    evidence: {
+      commit: "898909c8447e47abf4ef22d81cae98311598b108",
+      reviewed: "2026-11-05",
+      items: [
+        {
+          title: "Document API",
+          description:
+            "Authenticated upload, list, detail, rename, and deletion handlers.",
+          path: "backend/app/api/v1/documents.py",
+        },
+        {
+          title: "Processing service",
+          description:
+            "Loading, cleaning, chunking, embeddings, and processing states.",
+          path: "backend/app/services/document_processing.py",
+        },
+        {
+          title: "Embedding storage",
+          description:
+            "A pgvector column and source metadata on document chunks.",
+          path: "backend/app/models/document_chunk.py",
+        },
+        {
+          title: "Chat boundary",
+          description: "No chat request handlers at the reviewed revision.",
+          path: "backend/app/api/v1/chat.py",
+        },
+      ],
+      limits: [
+        "Source inspection establishes code presence. The backend and its tests were not executed during this review.",
+        "Retrieval quality, production readiness, and performance have not been measured here.",
+      ],
+    },
   },
   {
     slug: "fastapi-journey",
@@ -148,73 +207,111 @@ export const projects: Project[] = [
     status: "Learning Repository",
     categories: ["Backend Engineering", "Engineering Learning"],
     summary:
-      "Backend development practice and application-building with FastAPI, from API fundamentals to larger learning projects.",
+      "Backend exercises and applications covering authenticated task management, searchable blog APIs, and e-commerce checkout logic.",
     tags: ["FastAPI", "Python", "REST APIs", "PostgreSQL"],
     repo: "FAST_API_JOURNEY",
     diagram: "api",
     overview:
-      "A hands-on backend engineering learning repository. The public directory includes focused exercises alongside blog, e-commerce, task management, and weather application projects.",
+      "A collection of backend exercises and application projects. The task manager implements user-scoped task operations with filtering and pagination. The blog API includes authentication and searchable listings. A separate e-commerce backend explores checkout transactions and idempotency.",
     motivation:
-      "Build a practical understanding of API development by moving from focused exercises to substantial application implementations.",
+      "Move from isolated API concepts to applications combining validation, authentication, persistence, and useful query behavior.",
     stack: [
       {
         name: "Python & FastAPI",
-        label: "Backend",
-        description: "API development and backend exercises.",
+        label: "API development",
+        description:
+          "Request handlers, dependency injection, and typed request/response schemas.",
       },
       {
-        name: "Pydantic & SQLAlchemy",
-        label: "Validation & data",
-        description: "Included in the documented learning path.",
+        name: "SQLAlchemy & Pydantic",
+        label: "Data layer",
+        description:
+          "Database queries and schema validation appear in the application implementations.",
       },
       {
         name: "React & PostgreSQL",
-        label: "Project tooling",
-        description: "Listed in the repository’s full-stack learning material.",
+        label: "Full-stack learning",
+        description:
+          "React frontends and PostgreSQL learning material are included. Storage configuration varies by application.",
       },
     ],
     approach: [
       {
-        title: "A. Focused backend exercises",
+        title: "Task management",
         description:
-          "The learning path covers validation, CRUD, response models, error handling, dependency injection, and database integration.",
+          "Task CRUD queries scope access to the authenticated user. Lists support search, status, priority, date filters, sorting, and pagination.",
       },
       {
-        title: "B. Application projects",
+        title: "Blog API",
         description:
-          "Separate application directories provide space to apply backend concepts in larger examples.",
+          "Registration and login issue bearer tokens. Blog listing supports title/content search and bounded pagination; write routes require authentication.",
       },
       {
-        title: "C. Engineering practices",
+        title: "Checkout transactions",
         description:
-          "Authentication, caching, API testing, and containerization appear in the documented learning material. Individual coverage varies by exercise.",
+          "The checkout service includes database locking, idempotency-key handling, stock validation, commit, and rollback paths. These illustrate backend decisions without establishing production payment reliability.",
       },
     ],
     progress: [
       {
-        title: "Backend fundamentals",
-        description: "A repository of exercises and application code.",
-        status: "Learning",
+        title: "Task and blog APIs",
+        description:
+          "Concrete route implementations can be reviewed in the linked source files.",
+        status: "Source verified",
       },
       {
-        title: "Application practice",
+        title: "E-commerce checkout",
         description:
-          "Blog, task management, e-commerce, and weather project directories.",
-        status: "Exploration",
+          "Transaction and retry-handling logic is present in the checkout service.",
+        status: "Source verified",
+      },
+      {
+        title: "Deployment readiness",
+        description:
+          "Each application needs its own configuration and runtime validation.",
+        status: "Not evaluated",
       },
     ],
     notes: [
       {
-        title: "Learning scope",
+        title: "Authentication and ownership differ",
         description:
-          "These projects communicate hands-on learning, rather than commercial production adoption.",
+          "The task manager scopes access by user. The reviewed blog update/delete handlers require a token but do not check resource ownership.",
       },
       {
-        title: "Source-first review",
+        title: "Configuration matters",
         description:
-          "Review the relevant subdirectory to understand each exercise’s implementation and dependencies.",
+          "The task manager uses permissive CORS settings. Deployment-specific configuration remains necessary.",
       },
     ],
+    evidence: {
+      commit: "e1d3ef066c6b3341c8ed508a26d9c4b2fe6a1715",
+      reviewed: "2026-11-05",
+      items: [
+        {
+          title: "Task manager routes",
+          description:
+            "Authentication, owner-scoped CRUD, filtering, sorting, and pagination.",
+          path: "TASK_MANAG_FULLSTACK_P/backend/main.py",
+        },
+        {
+          title: "Blog API routes",
+          description:
+            "Registration, login, searchable listings, and authenticated writes.",
+          path: "blog_api_project/app/main.py",
+        },
+        {
+          title: "Checkout service",
+          description:
+            "Locks, idempotency handling, stock checks, and transaction boundaries.",
+          path: "E-commerce-api/BACKEND/app/services/checkout.py",
+        },
+      ],
+      limits: [
+        "Applications were inspected, not executed or security-audited during this review.",
+        "No production traffic, test pass rate, or payment-processing results are claimed.",
+      ],
+    },
   },
   {
     slug: "rag-journey",
@@ -222,75 +319,113 @@ export const projects: Project[] = [
     code: "PRJ-03",
     alias: "/rag-experiments",
     eyebrow: "AI Engineering / Learning",
-    status: "Active Exploration",
+    status: "Learning Repository",
     categories: ["AI Applications", "Engineering Learning"],
     summary:
-      "Exploring retrieval-augmented generation and related AI engineering concepts through hands-on learning and focused experiments.",
-    tags: ["Python", "LLM Fundamentals", "Pydantic", "AI Learning"],
+      "AI foundations through a streaming CLI chatbot, prompting exercises, Pydantic, and a mock-weather tool-calling example.",
+    tags: ["Python", "LLM APIs", "Pydantic", "Tool Calling"],
     repo: "RAG-JOURNEY",
     diagram: "rag",
     overview:
-      "A learning and experimentation repository for AI application engineering. Visible exercises include a command-line chatbot, LLM fundamentals, prompting, Pydantic, and tool calling.",
+      "Focused AI engineering exercises. The CLI chatbot streams model output and keeps conversation history. The tool-calling example defines a weather function, dispatches model-requested calls, and returns tool results for a final response. Retrieval remains the broader learning direction.",
     motivation:
-      "Understand the building blocks of useful AI applications before combining them into more involved retrieval workflows.",
+      "Understand model interaction, structured data, and tool execution before combining these building blocks into document retrieval applications.",
     stack: [
       {
         name: "Python",
         label: "Language",
-        description: "The foundation for the learning exercises.",
+        description: "Command-line exercises and local tool implementations.",
       },
       {
-        name: "LLM Fundamentals",
-        label: "Learning track",
-        description: "Chatbot, prompting, and tool-calling exercises.",
+        name: "OpenAI-compatible SDK & Gemini",
+        label: "Model interaction",
+        description:
+          "The Python examples configure the OpenAI client against a Gemini-compatible endpoint.",
       },
       {
-        name: "Pydantic",
-        label: "Structured data",
-        description: "A dedicated learning exercise in the repository.",
+        name: "Pydantic & JSON schemas",
+        label: "Structured inputs",
+        description:
+          "A dedicated Pydantic exercise and JSON-schema tool definitions explore structured data.",
       },
     ],
     approach: [
       {
-        title: "A. Start with fundamentals",
+        title: "Streaming conversation",
         description:
-          "Explore Python for AI and direct interaction with language models.",
+          "The CLI app appends user and assistant messages to session history and streams response chunks to the terminal.",
       },
       {
-        title: "B. Build focused experiments",
+        title: "Tool execution loop",
         description:
-          "Separate exercises organize chatbot, prompting, validation, and tool-calling material.",
+          "The example declares a weather tool, dispatches requested calls to a local function, and sends results back with matching tool-call IDs.",
       },
       {
-        title: "C. Explore retrieval concepts",
+        title: "Retrieval as a learning direction",
         description:
-          "Retrieval, embeddings, and indexing are learning directions. Advanced retrieval features are not presented as completed implementations.",
+          "The reviewed tree contains foundations and tool-calling exercises. A complete ingestion, vector search, and grounded-answer pipeline was not verified.",
       },
     ],
     progress: [
       {
-        title: "AI foundations",
-        description: "Focused exercises and experiments.",
-        status: "Learning",
+        title: "CLI chatbot",
+        description:
+          "Conversation history and streamed model responses appear in the example.",
+        status: "Source verified",
       },
       {
-        title: "Retrieval concepts",
-        description: "An ongoing area of exploration.",
-        status: "Exploration",
+        title: "Weather tool calling",
+        description:
+          "The function-call loop uses mock weather data and generated fallback values.",
+        status: "Mock-data example",
+      },
+      {
+        title: "End-to-end RAG",
+        description:
+          "Document retrieval, hybrid search, and multimodal retrieval remain unverified learning directions.",
+        status: "Not verified",
       },
     ],
     notes: [
       {
-        title: "Experiment versus product",
+        title: "Identify the source of tool data",
         description:
-          "This repository records learning work and does not claim a deployed production RAG service.",
+          "The weather example demonstrates orchestration with mock data. It is not connected to a live weather provider.",
       },
       {
-        title: "Incremental understanding",
+        title: "Distinguish API calls from retrieval",
         description:
-          "Small experiments help isolate concepts before introducing additional application complexity.",
+          "Chat and tool calls do not by themselves retrieve document context. These exercises establish foundations for later RAG work.",
       },
     ],
+    evidence: {
+      commit: "d9fbed02f62ab145b1bcbb925b6b42f0d1720729",
+      reviewed: "2026-11-05",
+      items: [
+        {
+          title: "Streaming chatbot",
+          description:
+            "Session messages and streamed chunks through a Gemini-compatible endpoint.",
+          path: "day_01-cli-chatbot/main.py",
+        },
+        {
+          title: "Tool-calling example",
+          description:
+            "Function schema, local dispatch, mock data, and tool-result messages.",
+          path: "day_05_tool_calling/tool_calling.py",
+        },
+        {
+          title: "Learning scope",
+          description:
+            "The repository describes retrieval as its broader learning direction.",
+          path: "README.md",
+        },
+      ],
+      limits: [
+        "Examples require model credentials and were not executed during this review.",
+        "Mock weather is illustrative; retrieval accuracy and production RAG behavior are not established.",
+      ],
+    },
   },
   {
     slug: "dsa-journey",

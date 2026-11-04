@@ -5,11 +5,11 @@ import { Button, Icon, Label, Status, Tags } from "./ui";
 import { Diagram } from "./Diagrams";
 const sections = [
   ["overview", "Overview"],
-  ["motivation", "Problem Statement"],
-  ["stack", "Tech Stack"],
-  ["architecture", "Architecture Blueprint"],
-  ["development", "Development Status"],
-  ["learnings", "Challenges & Learnings"],
+  ["motivation", "Why I built it"],
+  ["stack", "Technologies"],
+  ["architecture", "How it works"],
+  ["development", "Current scope"],
+  ["learnings", "Engineering notes"],
 ];
 const stages = [
   [
@@ -69,10 +69,10 @@ export function ProjectDetail({ project }: { project: Project }) {
           </div>
           <div className="detail-actions">
             <Button href={`${profile.github}/${project.repo}`} icon="terminal">
-              GitHub Repository
+              View source on GitHub
             </Button>
-            <Button href="#architecture" icon="tree" secondary>
-              Inspect Blueprint
+            <Button href="#development" icon="file" secondary>
+              See current scope
             </Button>
           </div>
         </div>
@@ -83,17 +83,13 @@ export function ProjectDetail({ project }: { project: Project }) {
               project.eyebrow,
               "Independent learning & development",
             ],
-            [
-              "System Phase",
-              project.status,
-              "See the source for current progress",
-            ],
+            ["Status", project.status, "See the source for current progress"],
             [
               "Core Domain",
               project.categories[0],
               "Practical engineering exploration",
             ],
-            ["Source", "Public Repository", "No production adoption claimed"],
+            ["Source", "Public Repository", "Independent project work"],
           ].map(([title, value, sub]) => (
             <div key={title}>
               <span className="micro-label">{title}</span>
@@ -102,16 +98,52 @@ export function ProjectDetail({ project }: { project: Project }) {
             </div>
           ))}
         </div>
+        {project.evidence && (
+          <section className="evidence-panel" aria-labelledby="evidence-title">
+            <div className="evidence-heading">
+              <h2 id="evidence-title">What you can review</h2>
+              <p>
+                Source reviewed {project.evidence.reviewed} · revision{" "}
+                <a
+                  href={`${profile.github}/${project.repo}/tree/${project.evidence.commit}`}
+                >
+                  {project.evidence.commit.slice(0, 7)}
+                </a>
+              </p>
+            </div>
+            <div className="evidence-grid">
+              {project.evidence.items.map((item) => (
+                <a
+                  className="evidence-link"
+                  href={`${profile.github}/${project.repo}/blob/${project.evidence!.commit}/${item.path}`}
+                  key={item.path}
+                >
+                  <strong>
+                    {item.title}
+                    <Icon name="external" size={16} />
+                  </strong>
+                  <span>{item.description}</span>
+                  <small>Read source</small>
+                </a>
+              ))}
+            </div>
+            <ul className="review-limits">
+              {project.evidence.limits.map((limit) => (
+                <li key={limit}>{limit}</li>
+              ))}
+            </ul>
+          </section>
+        )}
       </div>
       <section className="topology-section">
         <div className="container">
           <div className="topology-heading">
             <div>
-              <Label>System Topology</Label>
+              <Label>Conceptual workflow</Label>
               <h2>
                 {project.slug === "intellex"
-                  ? "RAG Engine Architectural Flow"
-                  : "Engineering Learning Map"}
+                  ? "The intended document-to-answer workflow"
+                  : "Learning concepts"}
               </h2>
             </div>
             <span className="concept-badge">
@@ -155,10 +187,10 @@ export function ProjectDetail({ project }: { project: Project }) {
                   Project Phase<strong>In Development</strong>
                 </span>
                 <span>
-                  Implementation Scope<strong>Review repository</strong>
+                  Current implementation<strong>Document preparation</strong>
                 </span>
                 <span>
-                  Performance Claims<strong>None asserted</strong>
+                  Retrieval & chat<strong>Planned</strong>
                 </span>
               </div>
             </div>
@@ -169,7 +201,7 @@ export function ProjectDetail({ project }: { project: Project }) {
       </section>
       <div className="container detail-layout">
         <aside className="detail-sidebar">
-          <span className="micro-label">Index & Sections</span>
+          <span className="micro-label">On this page</span>
           <nav aria-label="Project sections">
             {sections.map(([id, title], i) => (
               <a href={`#${id}`} key={id}>
@@ -187,53 +219,17 @@ export function ProjectDetail({ project }: { project: Project }) {
             <Label number="01">Discovery</Label>
             <h2>Project Overview</h2>
             <p>{project.overview}</p>
-            <div className="inset-pair">
-              <div>
-                <h3>Workspace Objective</h3>
-                <p>{project.motivation}</p>
-              </div>
-              <div>
-                <h3>Architectural Philosophy</h3>
-                <p>
-                  Learn through focused implementation and keep the difference
-                  between planned architecture and completed functionality
-                  clear.
-                </p>
-              </div>
-            </div>
           </section>
           <section id="motivation">
             <Label number="02">Problem Space</Label>
-            <h2>Motivation & Problem Statement</h2>
+            <h2>Why I built it</h2>
             <p>{project.motivation}</p>
-            <div className="inset-pair">
-              <div>
-                <h3 className="amber-text">
-                  <Icon name="compass" size={15} />
-                  Keep the problem concrete
-                </h3>
-                <p>
-                  Start with a useful problem and choose tools that support the
-                  actual requirements.
-                </p>
-              </div>
-              <div>
-                <h3 className="amber-text">
-                  <Icon name="file" size={15} />
-                  Make progress reviewable
-                </h3>
-                <p>
-                  The public repository provides a place to inspect
-                  implementation details as the project evolves.
-                </p>
-              </div>
-            </div>
           </section>
           <section id="stack">
             <Label number="03">Stack Specification</Label>
             <h2>
               {project.slug === "intellex"
-                ? "Documented Technology Direction"
+                ? "Current tools & architecture direction"
                 : "Technology & Learning Areas"}
             </h2>
             <p>
@@ -254,7 +250,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           </section>
           <section id="architecture">
             <Label number="04">Deep Dive</Label>
-            <h2>Architectural Blueprint Breakdown</h2>
+            <h2>How it works</h2>
             <p>
               A source-grounded overview of the project’s organization and
               intended direction.
@@ -269,8 +265,8 @@ export function ProjectDetail({ project }: { project: Project }) {
             </div>
           </section>
           <section id="development">
-            <Label number="05">Timeline & Progress</Label>
-            <h2>Current Development Status</h2>
+            <Label number="05">Implementation scope</Label>
+            <h2>Implemented, planned & unverified</h2>
             <p>
               {project.slug === "intellex"
                 ? "Intellex remains In Development. No completion percentages or unverified milestones are presented."
@@ -291,7 +287,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           </section>
           <section id="learnings">
             <Label number="06">Engineering Learnings</Label>
-            <h2>Challenges & Engineering Insights</h2>
+            <h2>Engineering notes & limitations</h2>
             <div className="inset-pair">
               {project.notes.map((n, i) => (
                 <div key={n.title}>
@@ -310,7 +306,7 @@ export function ProjectDetail({ project }: { project: Project }) {
         <aside className="source-callout">
           <div>
             <Label>Open source engineering</Label>
-            <h2>Explore the Implementation Progress</h2>
+            <h2>Explore the source</h2>
             <p>
               Review the source, follow the project, or get in touch to discuss
               the work.
@@ -325,14 +321,14 @@ export function ProjectDetail({ project }: { project: Project }) {
               icon="message"
               secondary
             >
-              Offer Feedback
+              Discuss this project
             </Button>
           </div>
         </aside>
         <div className="related-heading">
           <div>
             <Label>Exploration & Foundations</Label>
-            <h2>Related Technical Journeys</h2>
+            <h2>More projects</h2>
           </div>
           <Link className="text-link" href="/projects">
             All Projects <Icon name="right" size={15} />

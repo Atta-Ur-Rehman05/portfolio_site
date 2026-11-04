@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { profile } from "../data/content";
-import type { Project } from "../data/content";
+import type { ProjectPreview } from "../data/content";
 import { Diagram } from "./Diagrams";
 import { Icon, Status, Tags } from "./ui";
 export function ProjectCard({
@@ -8,7 +8,7 @@ export function ProjectCard({
   featured = false,
   compact = false,
 }: {
-  project: Project;
+  project: ProjectPreview;
   featured?: boolean;
   compact?: boolean;
 }) {
@@ -35,20 +35,22 @@ export function ProjectCard({
       <Diagram kind={project.diagram} small={compact} />
       {!featured && !compact && <Tags items={project.tags} />}
       <div className="project-actions">
+        <Link
+          className="button primary"
+          href={`/projects/${project.slug}`}
+          aria-label={`Read ${project.name} case study`}
+        >
+          Read case study
+          <Icon name="right" size={14} />
+        </Link>
         <a
           className="button secondary"
           href={`${profile.github}/${project.repo}`}
+          aria-label={`View ${project.name} source on GitHub`}
         >
           <Icon name="code" size={14} />
-          GitHub Repository
+          GitHub
         </a>
-        <Link
-          className={`button ${featured ? "primary" : "secondary detail-button"}`}
-          href={`/projects/${project.slug}`}
-        >
-          {featured ? "View Details" : "Case Study"}
-          <Icon name="right" size={14} />
-        </Link>
       </div>
     </article>
   );

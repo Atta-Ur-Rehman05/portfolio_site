@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { Icon } from "./ui";
 import { profile } from "../data/content";
 const links = [
+  ["Projects", "/projects"],
   ["About", "/#about"],
   ["Experience", "/#experience"],
-  ["Projects", "/projects"],
   ["Skills", "/#skills"],
   ["Education", "/#education"],
   ["Contact", "/#contact"],
@@ -62,8 +62,17 @@ export function Header() {
             className="button primary compact"
             href={`mailto:${profile.email}`}
           >
-            Let’s Connect
+            Email me
           </a>
+          {profile.resume && (
+            <a
+              className="button secondary compact"
+              href={profile.resume}
+              download
+            >
+              Resume <Icon name="file" size={14} />
+            </a>
+          )}
           <a
             className="profile-icon"
             href={profile.linkedin}
@@ -72,6 +81,7 @@ export function Header() {
             <Icon name="user" size={17} />
           </a>
           <button
+            type="button"
             ref={button}
             className="menu-button"
             aria-label={open ? "Close navigation" : "Open navigation"}

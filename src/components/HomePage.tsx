@@ -14,26 +14,24 @@ export function HomePage() {
             <i /> {profile.title} @ {profile.company}
           </span>
           <h1>
-            Building Backend
-            <br />
-            Systems &{" "}
-            <span>
-              AI-
-              <br className="hero-break" />
-              Powered Applications.
-            </span>
+            Building backend systems & <span>AI-powered applications.</span>
           </h1>
           <p>{profile.description}</p>
           <div className="hero-buttons">
-            <Button href="#projects">
-              Explore My Projects <Icon name="right" size={16} />
+            <Button href="/projects">
+              View projects <Icon name="right" size={16} />
             </Button>
-            <Button href="#contact" icon="mail" secondary>
-              Get In Touch
+            <Button href={`mailto:${profile.email}`} icon="mail" secondary>
+              Email me
             </Button>
+            {profile.resume && (
+              <a className="button secondary" href={profile.resume} download>
+                <Icon name="file" size={16} /> Download resume
+              </a>
+            )}
           </div>
           <div className="hero-signals">
-            <span>Signals</span>
+            <span>Find me</span>
             <a href={profile.github}>GitHub ↗</a>
             <a href={profile.linkedin}>LinkedIn ↗</a>
             <a href={`mailto:${profile.email}`}>{profile.email} ↗</a>
@@ -140,8 +138,12 @@ export function HomePage() {
           </div>
           <div className="experience-body">
             <span className="micro-label">Scope of contribution</span>
-            <h4>{profile.experience.contribution}</h4>
-            <p>{profile.experience.additional}</p>
+            <h4>AI application development</h4>
+            <ul className="experience-scope">
+              <li>{profile.experience.contribution}</li>
+              <li>AI integration for e-commerce applications.</li>
+              <li>Static website development.</li>
+            </ul>
             <Tags items={["RAG", "AI Applications", "Chatbots"]} />
           </div>
         </article>

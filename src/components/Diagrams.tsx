@@ -184,16 +184,16 @@ export function HeroDiagram() {
           <i />
           <i />
         </span>
-        <span>rag_workspace_concept.svg</span>
+        <span>How retrieval-augmented AI works</span>
         <span className="terminal-badge">CONCEPT</span>
       </div>
       <div className="hero-topology">
         <div className="input-nodes">
           <span>
-            INPUT_DOCS<small>Source material</small>
+            DOCUMENTS<small>Source material</small>
           </span>
           <span>
-            QUERY_STREAM<small>User question</small>
+            QUESTION<small>User input</small>
           </span>
           <span>
             CONTEXT<small>Retrieved passages</small>
@@ -213,7 +213,7 @@ export function HeroDiagram() {
         </div>
         <span className="topology-line" />
         <div className="output-node">
-          AI RESPONSE<small>Context-aware direction</small>
+          AI RESPONSE<small>Answer with context</small>
         </div>
       </div>
       <div className="terminal-metadata">
