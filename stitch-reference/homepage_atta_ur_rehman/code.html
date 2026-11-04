@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-surface":"#dfe2ee","tertiary-fixed-dim":"#ffb957","primary-fixed":"#a2eeff","tertiary-fixed":"#ffddb5","surface-tint":"#2fd9f4","on-error-container":"#ffdad6","on-secondary-container":"#00374d","inverse-primary":"#006877","background":"#0f131c","on-tertiary":"#462b00","on-surface-variant":"#bbc9cd","primary-fixed-dim":"#2fd9f4","outline":"#859397","surface-dim":"#0f131c","surface":"#0f131c","surface-container-highest":"#31353e","surface-container-lowest":"#0a0e16","on-primary-container":"#005763","outline-variant":"#3c494c","surface-container-high":"#262a33","inverse-on-surface":"#2c3039","on-secondary-fixed":"#001e2c","secondary-container":"#00a6e0","secondary":"#7bd0ff","surface-variant":"#31353e","surface-container-low":"#181c24","on-surface":"#dfe2ee","primary":"#8aebff","secondary-fixed-dim":"#7bd0ff","error-container":"#93000a","primary-container":"#22d3ee","on-background":"#dfe2ee","secondary-fixed":"#c4e7ff","on-tertiary-fixed":"#2a1800","on-primary":"#00363e","on-primary-fixed":"#001f25","on-tertiary-fixed-variant":"#643f00","error":"#ffb4ab","on-error":"#690005","tertiary":"#ffd6a3","on-secondary":"#00354a","surface-bright":"#353942","on-primary-fixed-variant":"#004e5a","on-tertiary-container":"#6e4600","on-secondary-fixed-variant":"#004c69","tertiary-container":"#ffb13b","surface-container":"#1c2028"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"gutter-mobile":"1rem","space-sm":"0.5rem",margin:"3rem","space-md":"1rem","space-xs":"0.25rem","space-xl":"2.5rem",gutter:"1.5rem","space-lg":"1.5rem","margin-mobile":"1.25rem"},fontFamily:{"body-sm":["Inter"],"code-md":["JetBrains Mono"],"headline-lg":["Geist"],"label-sm":["JetBrains Mono"],"label-md":["JetBrains Mono"],display:["Geist"],"headline-md":["Geist"],"headline-lg-mobile":["Geist"],"headline-sm":["Geist"],"body-md":["Inter"],"display-mobile":["Geist"],"code-sm":["JetBrains Mono"],"body-lg":["Inter"]},fontSize:{"body-sm":["13px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"code-md":["13px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.06em",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"500"}],display:["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"500"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"-0.01em",fontWeight:"500"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"display-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.025em",fontWeight:"600"}],"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.45)]"><div class="h-16 max-w-[1200px] mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="AR Monogram Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U_gzLI6mMPztvjwBYJEySbBDibCtX4puhRYk_CgFOCG8XQ1J5pzVnfbuya64Q-Kjf0wZzJU_gkZOYGoZKkcLElO-3zJq9obWTmr02c4bOFnWv8QXB1grxhV9AU-qLY5WxVcrr0qIaV496b_ffDmMrplTULZze1e2VZnksWixAMe_R6JfnNd7pa3zywv-SH50vdJ5uiYPM2EwXuKRU3qNxRzTww6wXU0dTvpJlC08s"/><a class="flex items-center gap-space-sm group" data-path="overview" href="#"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface group-hover:text-primary transition-colors">Atta Ur Rehman</span><span class="font-code-sm text-code-sm text-primary bg-surface-container-high px-space-xs py-0.5 rounded border border-outline-variant/30 hidden sm:inline-block">AI / Backend</span></a></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-medium rounded-lg shadow-[0_0_20px_rgba(34,211,238,0.12)]"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="about" href="#">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="experience" href="#">Experience</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="projects" href="#">Projects</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="skills" href="#">Skills</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="education" href="#">Education</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center justify-center font-label-md text-label-md bg-primary-container text-on-primary font-medium px-space-md py-2 rounded shadow-[0_0_16px_rgba(34,211,238,0.25)] hover:bg-primary transition-all" href="mailto:profatta3@gmail.com">Let's Connect</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 flex-1 bg-background"><div class="flex flex-col w-full">
+<!-- Top Subtle Ambient Light Field -->
+<div class="relative w-full max-w-[1200px] mx-auto px-gutter overflow-hidden pointer-events-none">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-primary-container/10 blur-[130px] rounded-full"></div>
+<div class="absolute top-48 right-0 w-[420px] h-[280px] bg-secondary-container/10 blur-[100px] rounded-full"></div>
+</div>
+<!-- HERO SECTION -->
+<section class="relative w-full max-w-[1200px] mx-auto px-gutter pt-space-xl pb-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Hero Narrative (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Live Eyebrow Badge -->
+<div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-surface-container-high w-fit shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-code-sm text-code-sm text-on-surface">AI Application Engineer Intern <span class="text-on-surface-variant">@</span> <span class="text-primary font-medium">Hexoforge LLC</span></span>
+</div>
+<!-- Main Headline -->
+<div class="flex flex-col gap-2">
+<h1 class="font-display text-display font-semibold tracking-tight text-on-surface text-balance">
+            Building Backend Systems &amp; <span class="bg-gradient-to-r from-primary via-primary-container to-secondary bg-clip-text text-transparent">AI-Powered Applications.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[620px] leading-relaxed">
+            I'm Atta Ur Rehman, a Software Engineering undergraduate and AI Application Engineer Intern at Hexoforge LLC. I work on RAG-based applications and explore backend engineering, APIs, and intelligent software systems.
+          </p>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-2">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-[0_0_24px_rgba(34,211,238,0.22)] hover:bg-primary transition-all" href="#projects">
+<span>Explore My Projects</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container-high transition-all" href="mailto:profatta3@gmail.com">
+<span class="material-symbols-outlined text-[18px] text-primary">mail</span>
+<span>Get In Touch</span>
+</a>
+</div>
+<!-- Verified Direct Channels -->
+<div class="flex items-center gap-space-lg pt-4">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider">Signals</span>
+<div class="h-3 w-px bg-surface-container-highest"></div>
+<div class="flex items-center gap-4">
+<a class="group flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="font-code-sm text-code-sm font-medium">GitHub</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 transition-transform">north_east</span>
+</a>
+<a class="group flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors" href="https://www.linkedin.com/in/atta-ur-rehman-11a351309/" rel="noopener noreferrer" target="_blank">
+<span class="font-code-sm text-code-sm font-medium">LinkedIn</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 transition-transform">north_east</span>
+</a>
+<a class="group flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors" href="mailto:profatta3@gmail.com">
+<span class="font-code-sm text-code-sm font-medium">profatta3@gmail.com</span>
+<span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 transition-transform">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Hero Visual Vector Pipeline (5 cols) -->
+<div class="lg:col-span-5 relative">
+<div class="w-full bg-surface-container-low rounded-xl p-space-lg shadow-xl relative overflow-hidden">
+<!-- Top Console Bar -->
+<div class="flex items-center justify-between pb-4 mb-4 bg-surface-container-lowest/60 -mx-space-lg -mt-space-lg px-space-lg pt-space-md">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-error/70"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim/70"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary/70"></div>
+<span class="font-code-sm text-code-sm text-on-surface-variant ml-2">rag_retrieval_topology.v2</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary">LIVE PIPELINE</span>
+</div>
+<!-- Abstract Technical SVG Schematic -->
+<div class="relative py-2">
+<svg class="w-full h-auto text-primary" fill="none" viewbox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="cyanLine" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#22d3ee" stop-opacity="0.8"></stop>
+<stop offset="100%" stop-color="#7bd0ff" stop-opacity="0.2"></stop>
+</lineargradient>
+<lineargradient id="glowBox" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#22d3ee" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#0a0e16" stop-opacity="0.8"></stop>
+</lineargradient>
+<pattern height="20" id="gridPattern" patternunits="userSpaceOnUse" width="20">
+<path d="M 20 0 L 0 0 0 20" fill="none" stroke="#31353e" stroke-opacity="0.4" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<!-- Subtle Background Grid -->
+<rect fill="url(#gridPattern)" height="320" opacity="0.6" rx="8" width="440" x="10" y="10"></rect>
+<!-- Connection Data Highways -->
+<path d="M 90 70 L 170 70 L 230 140 L 320 140" stroke="url(#cyanLine)" stroke-dasharray="4 3" stroke-width="1.75"></path>
+<path d="M 90 170 L 160 170 L 230 140" stroke="#8aebff" stroke-opacity="0.7" stroke-width="1.5"></path>
+<path d="M 90 270 L 180 270 L 230 200 L 320 200" stroke="#7bd0ff" stroke-dasharray="3 3" stroke-width="1.5"></path>
+<path d="M 320 170 L 400 170" stroke="#22d3ee" stroke-width="2"></path>
+<!-- Node 1: Ingestion & Chunks -->
+<g transform="translate(25, 45)">
+<rect fill="#181c24" height="50" rx="4" width="80"></rect>
+<rect fill="url(#glowBox)" height="50" rx="4" width="80" x="0" y="0"></rect>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="10" font-weight="600" x="12" y="24">INPUT_DOCS</text>
+<text fill="#bbc9cd" font-family="JetBrains Mono" font-size="8.5" x="12" y="38">chunk_size=512</text>
+</g>
+<!-- Node 2: Raw Query Stream -->
+<g transform="translate(25, 145)">
+<rect fill="#181c24" height="50" rx="4" width="80"></rect>
+<rect fill="url(#glowBox)" height="50" rx="4" width="80" x="0" y="0"></rect>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="10" font-weight="600" x="12" y="24">QUERY_STREAM</text>
+<text fill="#22d3ee" font-family="JetBrains Mono" font-size="8.5" x="12" y="38">REST API (FastAPI)</text>
+</g>
+<!-- Node 3: Metadata Index -->
+<g transform="translate(25, 245)">
+<rect fill="#181c24" height="50" rx="4" width="80"></rect>
+<rect fill="url(#glowBox)" height="50" rx="4" width="80" x="0" y="0"></rect>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="10" font-weight="600" x="12" y="24">SEMANTIC_CTX</text>
+<text fill="#bbc9cd" font-family="JetBrains Mono" font-size="8.5" x="12" y="38">JSON Payload</text>
+</g>
+<!-- Central Node: Vector Embeddings -->
+<g transform="translate(200, 115)">
+<rect fill="#1c2028" height="75" rx="6" width="90"></rect>
+<rect fill="url(#glowBox)" height="75" rx="6" width="90" x="0" y="0"></rect>
+<circle cx="45" cy="30" fill="#00363e" r="14" stroke="#22d3ee" stroke-width="1.5"></circle>
+<circle cx="45" cy="30" fill="#8aebff" r="5"></circle>
+<text fill="#8aebff" font-family="JetBrains Mono" font-size="9" font-weight="600" x="14" y="58">VECTOR EMBED</text>
+<text fill="#bbc9cd" font-family="JetBrains Mono" font-size="7.5" x="16" y="68">Cosine Sim: 0.94</text>
+</g>
+<!-- Node 4: Synthesis & Response -->
+<g transform="translate(330, 140)">
+<rect fill="#1c2028" height="60" rx="6" width="95"></rect>
+<rect fill="url(#glowBox)" height="60" rx="6" width="95" x="0" y="0"></rect>
+<text fill="#22d3ee" font-family="JetBrains Mono" font-size="10" font-weight="600" x="12" y="26">RAG SYNTHESIS</text>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="8.5" x="12" y="42">Context Augmented</text>
+<circle cx="80" cy="18" fill="#22d3ee" r="3"></circle>
+</g>
+<!-- Animated-like Pulse Marks -->
+<circle cx="170" cy="70" fill="#22d3ee" r="3"></circle>
+<circle cx="230" cy="140" fill="#8aebff" r="4"></circle>
+<circle cx="320" cy="170" fill="#22d3ee" r="3.5"></circle>
+</svg>
+</div>
+<!-- Bottom Telemetry Badges -->
+<div class="grid grid-cols-3 gap-2 pt-3">
+<div class="bg-surface-container p-2.5 rounded flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Architecture</span>
+<span class="font-label-md text-label-md text-primary font-medium">RAG Pipeline</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Core Layer</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">FastAPI Engine</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Store Mode</span>
+<span class="font-label-md text-label-md text-secondary font-medium">Vector Index</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 01 / ABOUT SECTION -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter py-20" id="about">
+<div class="flex items-center gap-3 mb-4">
+<span class="font-code-sm text-code-sm text-primary">01 //</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">About Me</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Editorial Narrative (6 cols) -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<h2 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface text-balance">
+          Engineering curiosity into practical solutions.
+        </h2>
+<div class="space-y-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<p>
+            I am an undergraduate Software Engineering student at Mirpur University of Science &amp; Technology (MUST), currently navigating the 2024–2028 academic tenure. Alongside academia, I serve as an AI Application Engineer Intern at Hexoforge LLC.
+          </p>
+<p>
+            My engineering philosophy centers on moving past purely conceptual models into reliable, production-grade applications. I focus on how software components converse: structuring clean RESTful API contracts, building low-latency retrieval pipelines, and ensuring data stores maintain predictable integrity.
+          </p>
+<p>
+            Whether implementing vector search algorithms or streamlining backend services, my goal is delivering clear, modular codebases built for real-world reliability.
+          </p>
+</div>
+<div class="pt-2 flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-code-sm text-code-sm text-on-surface">Undergrad 2024–2028</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-code-sm text-code-sm text-on-surface">AI Engineering Focus</span>
+</div>
+</div>
+</div>
+<!-- Right Structured Fact Matrix (6 cols) -->
+<div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between h-44 hover:bg-surface-container transition-colors shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant">01 / ROLE</span>
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Current Role</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">AI Application Engineer Intern</p>
+<p class="font-code-sm text-code-sm text-primary mt-1">Hexoforge LLC</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between h-44 hover:bg-surface-container transition-colors shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant">02 / INSTITUTION</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">school</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">University</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mirpur University of Science &amp; Technology (MUST)</p>
+<p class="font-code-sm text-code-sm text-on-surface-variant mt-1">2024 — 2028</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between h-44 hover:bg-surface-container transition-colors shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant">03 / SPECIALIZATION</span>
+<span class="material-symbols-outlined text-primary text-[20px]">layers</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Core Focus</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Backend Systems &amp; AI Engineering</p>
+<p class="font-code-sm text-code-sm text-primary mt-1">High-throughput APIs</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between h-44 hover:bg-surface-container transition-colors shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant">04 / ARCHITECTURE</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">dataset</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Primary Interests</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">RAG Systems &amp; Vector Stores</p>
+<p class="font-code-sm text-code-sm text-on-surface-variant mt-1">Semantic Ingestion</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 02 / EXPERIENCE SECTION -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter py-20" id="experience">
+<div class="flex items-center gap-3 mb-4">
+<span class="font-code-sm text-code-sm text-primary">02 //</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Experience</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface">
+          Where learning meets real-world engineering.
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Active technical contribution in industry production environments.
+        </p>
+</div>
+<span class="font-code-sm text-code-sm text-primary bg-surface-container-high px-3 py-1.5 rounded-full w-fit">
+        1 Active Engagement
+      </span>
+</div>
+<!-- Timeline Container Card -->
+<div class="bg-surface-container-low p-space-lg md:p-space-xl rounded-xl shadow-lg relative overflow-hidden">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 bg-surface-container-lowest/50 -mx-space-lg -mt-space-lg p-space-lg mb-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">memory</span>
+</div>
+<div>
+<div class="flex items-center gap-3">
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface">Hexoforge LLC</h3>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Current
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">AI Application Engineer Intern</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span>
+<span class="font-code-sm text-code-sm text-on-surface">April 2026 – Present</span>
+</div>
+</div>
+</div>
+<!-- Scope & Verified Details -->
+<div class="space-y-4">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-2">Scope of Contribution</h4>
+<p class="font-body-lg text-body-lg text-on-surface font-medium leading-relaxed max-w-[800px]">
+            Working on Retrieval-Augmented Generation (RAG) chatbot applications.
+          </p>
+</div>
+<div class="pt-2">
+<span class="font-code-sm text-code-sm text-on-surface-variant block mb-3">Verified Technical Stack:</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded bg-surface-container text-primary font-code-sm text-code-sm">RAG</span>
+<span class="px-3 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Python</span>
+<span class="px-3 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Vector DBs</span>
+<span class="px-3 py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">AI Chatbots</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 03 / SELECTED WORK SECTION -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter py-20" id="projects">
+<div class="flex items-center gap-3 mb-4">
+<span class="font-code-sm text-code-sm text-primary">03 //</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Selected Work</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface">
+          Things I've built and explored.
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          A selection of backend engineering projects, AI experiments, and ongoing development work.
+        </p>
+</div>
+<a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span>View All Repositories on GitHub</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<!-- Project Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Project 1: Intellex (Featured 12 cols) -->
+<div class="lg:col-span-12 bg-surface-container-low rounded-xl p-space-lg md:p-space-xl shadow-lg relative overflow-hidden group">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="flex items-center gap-3">
+<span class="font-code-sm text-code-sm text-primary">AI Application / Knowledge Workspace</span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary-fixed-dim font-code-sm text-code-sm font-medium">In Development</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-semibold text-on-surface">Intellex</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[540px] leading-relaxed">
+              An AI-oriented knowledge workspace project currently under development. Designed to bridge personal knowledge management with semantic retrieval, context querying, and vector-driven document analysis.
+            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant">Knowledge Graph</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant">RAG Ingestion</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant">Vector Semantic Index</span>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-all" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+<!-- Abstract Knowledge Network Schematic -->
+<div class="lg:col-span-5 bg-surface-container-lowest/80 p-space-md rounded-lg flex items-center justify-center">
+<svg class="w-full h-auto text-primary" fill="none" viewbox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+<!-- Central Hub -->
+<circle cx="160" cy="110" fill="#00363e" r="32" stroke="#22d3ee" stroke-width="1.5"></circle>
+<text fill="#8aebff" font-family="JetBrains Mono" font-size="11" font-weight="600" x="140" y="114">CORE</text>
+<!-- Orbital Nodes -->
+<circle cx="60" cy="60" fill="#181c24" r="16" stroke="#7bd0ff" stroke-width="1.2"></circle>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="8" x="48" y="63">DOC</text>
+<circle cx="260" cy="50" fill="#181c24" r="18" stroke="#22d3ee" stroke-width="1.2"></circle>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="8" x="246" y="54">EMBED</text>
+<circle cx="70" cy="170" fill="#181c24" r="18" stroke="#8aebff" stroke-width="1.2"></circle>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="8" x="56" y="174">INDEX</text>
+<circle cx="250" cy="170" fill="#181c24" r="20" stroke="#7bd0ff" stroke-width="1.2"></circle>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="8" x="235" y="174">QUERY</text>
+<!-- Radial Links -->
+<line opacity="0.7" stroke="#22d3ee" stroke-dasharray="3 2" stroke-width="1" x1="76" x2="132" y1="68" y2="98"></line>
+<line opacity="0.8" stroke="#8aebff" stroke-width="1.2" x1="243" x2="188" y1="62" y2="98"></line>
+<line opacity="0.6" stroke="#22d3ee" stroke-width="1.2" x1="87" x2="133" y1="162" y2="124"></line>
+<line opacity="0.7" stroke="#7bd0ff" stroke-dasharray="2 2" stroke-width="1" x1="231" x2="187" y1="160" y2="124"></line>
+<path d="M 60 60 Q 160 20 260 50" stroke="#31353e" stroke-dasharray="2 3" stroke-width="1"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Project 2: FastAPI Journey (6 cols) -->
+<div class="lg:col-span-6 bg-surface-container-low rounded-xl p-space-lg shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-code-sm text-code-sm text-primary">Backend Engineering</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Production API Patterns</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-2">FastAPI Journey</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+            Backend development practice and application-building with FastAPI. Rigorous exploration of routing architectures, async concurrency, request validation schemas, and database connectors.
+          </p>
+<!-- Flow Schema -->
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg mb-4">
+<div class="flex items-center justify-between text-code-sm font-code-sm text-on-surface-variant">
+<span>Client Req</span>
+<span class="text-primary">→</span>
+<span>Pydantic Schema</span>
+<span class="text-primary">→</span>
+<span>Async Handler</span>
+<span class="text-primary">→</span>
+<span>JSON Payload</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant">FastAPI</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant">Python</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant">REST APIs</span>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-6 mt-4">
+<a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+<!-- Project 3: RAG Journey (6 cols) -->
+<div class="lg:col-span-6 bg-surface-container-low rounded-xl p-space-lg shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-code-sm text-code-sm text-primary">AI Engineering / Learning</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Semantic Search</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-2">RAG Journey</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">
+            Exploring retrieval-augmented generation and related AI engineering concepts through hands-on learning. Investigating chunking strategies, dense embedding models, and contextual answer synthesis.
+          </p>
+<!-- Vector indexing pipeline visual -->
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg mb-4">
+<div class="flex items-center justify-between text-code-sm font-code-sm text-on-surface-variant">
+<span>Chunks</span>
+<span class="text-secondary">→</span>
+<span>Dense Vector</span>
+<span class="text-secondary">→</span>
+<span>Similarity Match</span>
+<span class="text-secondary">→</span>
+<span>Augmented Prompt</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant">Retrieval Systems</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant">Vector Search</span>
+<span class="px-2.5 py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant">Context Pipelines</span>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-6 mt-4">
+<a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 04 / TOOLKIT SECTION -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter py-20" id="skills">
+<div class="flex items-center gap-3 mb-4">
+<span class="font-code-sm text-code-sm text-primary">04 //</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Technical Toolkit</span>
+</div>
+<div class="mb-10">
+<h2 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface">
+        Technologies I work with and explore.
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+        Clean inventory of practical frameworks, databases, and exploration tracks.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Backend Engineering -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-[20px]">dns</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Backend Engineering</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Python</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-primary font-code-sm text-code-sm font-medium">FastAPI</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">API Development</span>
+</div>
+</div>
+<div class="pt-6 font-code-sm text-code-sm text-on-surface-variant">Active Application Core</div>
+</div>
+<!-- AI Engineering -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary text-[20px]">psychology</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">AI Engineering</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm font-medium">Retrieval-Augmented Generation (RAG)</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">AI Applications</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Vector Databases</span>
+</div>
+</div>
+<div class="pt-6 font-code-sm text-code-sm text-on-surface-variant">Internship &amp; Research Focus</div>
+</div>
+<!-- Frontend -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-tertiary text-[20px]">web</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Frontend</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">React</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">JavaScript</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">HTML</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">CSS</span>
+</div>
+</div>
+<div class="pt-6 font-code-sm text-code-sm text-on-surface-variant">Interface Layer</div>
+</div>
+<!-- Databases -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-[20px]">storage</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Databases</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded bg-surface-container text-primary font-code-sm text-code-sm">MongoDB</span>
+</div>
+</div>
+<div class="pt-6 font-code-sm text-code-sm text-on-surface-variant">Document &amp; Primary Data</div>
+</div>
+<!-- Additional Technologies of Interest (2 cols span on large) -->
+<div class="md:col-span-2 bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">travel_explore</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Additional Technologies of Interest</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Active curiosity and roadmap expansion stack:</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Next.js</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">TypeScript</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Tailwind CSS</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">PostgreSQL</span>
+</div>
+</div>
+<div class="pt-6 font-code-sm text-code-sm text-on-surface-variant">Continuous Technical Expansion</div>
+</div>
+</div>
+</section>
+<!-- 05 / CONTINUOUS LEARNING SECTION -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter py-20">
+<div class="flex items-center gap-3 mb-4">
+<span class="font-code-sm text-code-sm text-primary">05 //</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Continuous Learning</span>
+</div>
+<div class="mb-10">
+<h2 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface">
+        Learning, experimenting, improving.
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+        Dedicated engineering tracks sustaining technical velocity.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Track 1: DSA (With Repo Reference) -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="material-symbols-outlined text-primary text-[22px]">account_tree</span>
+<a class="font-code-sm text-code-sm text-primary hover:underline" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">Repo →</a>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-2">Data Structures &amp; Algorithms</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-3">
+            Systematic problem solving, algorithmic complexity, and foundational data abstractions.
+          </p>
+</div>
+<div class="pt-2">
+<span class="font-code-sm text-code-sm px-2 py-1 rounded bg-surface-container text-primary">MY_DSA_JOURNEY</span>
+</div>
+</div>
+<!-- Track 2: Backend Fundamentals -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<span class="material-symbols-outlined text-secondary text-[22px] mb-3 block">schema</span>
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-2">Backend Fundamentals</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            REST principles, client-server lifecycle, state handling, and reliable endpoint architecture.
+          </p>
+</div>
+<div class="pt-4 font-code-sm text-code-sm text-on-surface-variant">Core Engineering</div>
+</div>
+<!-- Track 3: System Design -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<span class="material-symbols-outlined text-tertiary text-[22px] mb-3 block">hub</span>
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-2">System Design</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Exploring modular services, database normalization, caching patterns, and throughput bottlenecks.
+          </p>
+</div>
+<div class="pt-4 font-code-sm text-code-sm text-on-surface-variant">Architectural Literacy</div>
+</div>
+<!-- Track 4: RAG & Embeddings -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<span class="material-symbols-outlined text-primary text-[22px] mb-3 block">grain</span>
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-2">RAG &amp; Vector Embeddings</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Evaluating distance metrics, high-dimensional indexing, and retrieval reranking models.
+          </p>
+</div>
+<div class="pt-4 font-code-sm text-code-sm text-on-surface-variant">Practical AI Ingestion</div>
+</div>
+</div>
+</section>
+<!-- 06 / EDUCATION SECTION -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter py-20" id="education">
+<div class="flex items-center gap-3 mb-4">
+<span class="font-code-sm text-code-sm text-primary">06 //</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Education</span>
+</div>
+<div class="mb-10">
+<h2 class="font-headline-lg text-headline-lg font-semibold tracking-tight text-on-surface">
+        Academic foundation.
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+        Undergraduate software engineering degree curriculum and technical fundamentals.
+      </p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-lg md:p-space-xl shadow-lg relative overflow-hidden">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface">
+              Mirpur University of Science &amp; Technology (MUST)
+            </h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-0.5">
+              Bachelor of Software Engineering
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-code-sm text-code-sm text-primary bg-surface-container px-3 py-1.5 rounded">
+            2024 — 2028
+          </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container-high px-3 py-1.5 rounded">
+            Undergraduate
+          </span>
+</div>
+</div>
+<div class="pt-4">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Coursework &amp; Academic Focus</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Software Engineering Principles</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Data Structures &amp; Algorithms</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Database Systems</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Object-Oriented Programming</span>
+<span class="px-3 py-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm">Computer Architecture</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 07 / CONTACT SECTION -->
+<section class="w-full max-w-[1200px] mx-auto px-gutter py-24 mb-12" id="contact">
+<div class="relative bg-surface-container-low rounded-2xl p-space-lg md:p-20 shadow-2xl overflow-hidden text-center flex flex-col items-center">
+<!-- Subtle Radial Glow in Contact Box -->
+<div class="absolute inset-0 bg-radial from-primary/10 via-transparent to-transparent pointer-events-none"></div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container mb-4">
+<span class="font-code-sm text-code-sm text-primary">07 // INITIATE TRANSMISSION</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg md:text-display md:font-semibold text-on-surface tracking-tight max-w-[700px] text-balance mb-4">
+        Let's build something meaningful.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[580px] mb-8 leading-relaxed">
+        I'm interested in AI engineering, backend development, and software engineering internship opportunities. Feel free to reach out.
+      </p>
+<!-- Verified Direct Action Channels -->
+<div class="flex flex-wrap items-center justify-center gap-4 relative z-10">
+<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-[0_0_24px_rgba(34,211,238,0.25)] hover:bg-primary transition-all" href="mailto:profatta3@gmail.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>Send an Email</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-primary">code</span>
+<span>GitHub Profile</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors" href="https://www.linkedin.com/in/atta-ur-rehman-11a351309/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-secondary">hub</span>
+<span>LinkedIn Connection</span>
+</a>
+</div>
+<div class="mt-8 pt-6">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Direct Mail: <a class="text-primary hover:underline" href="mailto:profatta3@gmail.com">profatta3@gmail.com</a></span>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.4)] py-space-xl"><div class="max-w-[1200px] mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start gap-space-xs"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Atta Ur Rehman</span><span class="font-code-sm text-code-sm text-on-surface-variant">—</span><span class="font-code-sm text-code-sm text-primary">AI Application Engineer Intern @ Hexoforge LLC</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Atta Ur Rehman. Engineered for high-throughput intelligent systems.</p></div><div class="flex items-center gap-space-md font-label-md text-label-md"><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-base">code</span>GitHub</a><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="https://www.linkedin.com/in/atta-ur-rehman-11a351309/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-base">hub</span>LinkedIn</a><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="mailto:profatta3@gmail.com"><span class="material-symbols-outlined text-base">mail</span>Email</a></div></div></footer></body></html>

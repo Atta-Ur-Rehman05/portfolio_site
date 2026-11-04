@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-surface":"#dfe2ee","tertiary-fixed-dim":"#ffb957","primary-fixed":"#a2eeff","tertiary-fixed":"#ffddb5","surface-tint":"#2fd9f4","on-error-container":"#ffdad6","on-secondary-container":"#00374d","inverse-primary":"#006877","background":"#0f131c","on-tertiary":"#462b00","on-surface-variant":"#bbc9cd","primary-fixed-dim":"#2fd9f4","outline":"#859397","surface-dim":"#0f131c","surface":"#0f131c","surface-container-highest":"#31353e","surface-container-lowest":"#0a0e16","on-primary-container":"#005763","outline-variant":"#3c494c","surface-container-high":"#262a33","inverse-on-surface":"#2c3039","on-secondary-fixed":"#001e2c","secondary-container":"#00a6e0","secondary":"#7bd0ff","surface-variant":"#31353e","surface-container-low":"#181c24","on-surface":"#dfe2ee","primary":"#8aebff","secondary-fixed-dim":"#7bd0ff","error-container":"#93000a","primary-container":"#22d3ee","on-background":"#dfe2ee","secondary-fixed":"#c4e7ff","on-tertiary-fixed":"#2a1800","on-primary":"#00363e","on-primary-fixed":"#001f25","on-tertiary-fixed-variant":"#643f00","error":"#ffb4ab","on-error":"#690005","tertiary":"#ffd6a3","on-secondary":"#00354a","surface-bright":"#353942","on-primary-fixed-variant":"#004e5a","on-tertiary-container":"#6e4600","on-secondary-fixed-variant":"#004c69","tertiary-container":"#ffb13b","surface-container":"#1c2028"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"gutter-mobile":"1rem","space-sm":"0.5rem",margin:"3rem","space-md":"1rem","space-xs":"0.25rem","space-xl":"2.5rem",gutter:"1.5rem","space-lg":"1.5rem","margin-mobile":"1.25rem"},fontFamily:{"body-sm":["Inter"],"code-md":["JetBrains Mono"],"headline-lg":["Geist"],"label-sm":["JetBrains Mono"],"label-md":["JetBrains Mono"],display:["Geist"],"headline-md":["Geist"],"headline-lg-mobile":["Geist"],"headline-sm":["Geist"],"body-md":["Inter"],"display-mobile":["Geist"],"code-sm":["JetBrains Mono"],"body-lg":["Inter"]},fontSize:{"body-sm":["13px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"code-md":["13px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.06em",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"500"}],display:["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"500"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"-0.01em",fontWeight:"500"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"display-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.025em",fontWeight:"600"}],"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.45)]"><div class="h-16 max-w-[1200px] mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="AR Monogram Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U_gzLI6mMPztvjwBYJEySbBDibCtX4puhRYk_CgFOCG8XQ1J5pzVnfbuya64Q-Kjf0wZzJU_gkZOYGoZKkcLElO-3zJq9obWTmr02c4bOFnWv8QXB1grxhV9AU-qLY5WxVcrr0qIaV496b_ffDmMrplTULZze1e2VZnksWixAMe_R6JfnNd7pa3zywv-SH50vdJ5uiYPM2EwXuKRU3qNxRzTww6wXU0dTvpJlC08s"/><a class="flex items-center gap-space-sm group" data-path="overview" href="#"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface group-hover:text-primary transition-colors">Atta Ur Rehman</span><span class="font-code-sm text-code-sm text-primary bg-surface-container-high px-space-xs py-0.5 rounded border border-outline-variant/30 hidden sm:inline-block">AI / Backend</span></a></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-medium rounded-lg shadow-[0_0_20px_rgba(34,211,238,0.12)]"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="about" href="#">About</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="experience" href="#">Experience</a><a aria-current="page" class="transition-all px-space-sm py-1.5 bg-surface-container-high text-primary font-medium rounded-lg shadow-[0_0_20px_rgba(34,211,238,0.12)]" data-path="projects" href="#">Projects</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="skills" href="#">Skills</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="education" href="#">Education</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-space-sm py-1.5 rounded" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center justify-center font-label-md text-label-md bg-primary-container text-on-primary font-medium px-space-md py-2 rounded shadow-[0_0_16px_rgba(34,211,238,0.25)] hover:bg-primary transition-all" href="mailto:profatta3@gmail.com">Let's Connect</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 flex-1 bg-background"><div class="flex flex-col w-full">
+<!-- Top Ambient Glow & Telemetry Bar -->
+<div class="relative w-full max-w-[1200px] mx-auto px-gutter pt-8 pb-12">
+<!-- Ambient cyan diffusion sphere (contained) -->
+<div class="absolute -top-10 right-12 w-96 h-96 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<div class="absolute top-48 left-0 w-80 h-80 bg-secondary-container/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+<!-- Header Section -->
+<div class="flex flex-col gap-6">
+<!-- Breadcrumb & Node Status -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2 font-code-sm text-code-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="overview" href="#">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span>Home</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-medium">Projects</span>
+</div>
+<div class="inline-flex items-center gap-2 px-space-sm py-1 bg-surface-container rounded-full text-on-surface-variant font-code-sm text-code-sm shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span>Index: 4 Active Repositories</span>
+<span class="text-outline-variant">•</span>
+<span class="text-primary">v2.4 Production Registry</span>
+</div>
+</div>
+<!-- Typographic Identity & Overline -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pt-2">
+<div class="flex flex-col gap-2 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary bg-surface-container-high px-2 py-0.5 rounded">PORTFOLIO DIRECTORY</span>
+<span class="font-code-sm text-code-sm text-outline-variant">// SYSTEM_DISCOVERY</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+            Projects &amp; Experiments
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Exploring backend systems, AI applications, and software engineering through practical projects.
+          </p>
+</div>
+<!-- Metric micro-widget -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center gap-6 shadow-md shrink-0">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface-variant">System Focus</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">RAG &amp; Microservices</span>
+</div>
+<div class="w-px h-8 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Primary Stack</span>
+<span class="font-code-md text-code-md text-primary font-medium">Python 3.12+</span>
+</div>
+</div>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-2 pt-4">
+<button class="filter-btn active-filter px-4 py-1.5 rounded font-label-md text-label-md transition-all flex items-center gap-1.5 bg-primary-container text-on-primary font-medium shadow-[0_0_16px_rgba(34,211,238,0.25)]" id="filter-all" onclick="filterProjects('all')">
+<span>All Projects</span>
+<span class="px-1.5 py-0.2 bg-on-primary/20 rounded font-code-sm text-code-sm">4</span>
+</button>
+<button class="filter-btn px-4 py-1.5 rounded font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" id="filter-ai" onclick="filterProjects('ai')">
+<span>AI Applications</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded font-code-sm text-code-sm">2</span>
+</button>
+<button class="filter-btn px-4 py-1.5 rounded font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" id="filter-backend" onclick="filterProjects('backend')">
+<span>Backend Engineering</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded font-code-sm text-code-sm">1</span>
+</button>
+<button class="filter-btn px-4 py-1.5 rounded font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" id="filter-learning" onclick="filterProjects('learning')">
+<span>Engineering Learning</span>
+<span class="px-1.5 py-0.2 bg-surface-container-highest rounded font-code-sm text-code-sm">2</span>
+</button>
+</div>
+</div>
+<!-- 2x2 Balanced High-Fidelity Project Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg mt-10">
+<!-- PROJECT 1: Intellex -->
+<article class="project-card group relative bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.6)]" data-category="ai">
+<div class="flex flex-col gap-4">
+<!-- Card Top Bar: Monospaced ID & Dynamic Badge -->
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-primary px-2 py-0.5 rounded bg-surface-container-high">PRJ-01</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">/intellex.core</span>
+</div>
+<!-- In Development status badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed-dim font-code-sm text-code-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed-dim opacity-80"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary-fixed-dim"></span>
+</span>
+              In Development
+            </span>
+</div>
+<!-- Title & Category -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">AI Application / Knowledge Workspace</span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface group-hover:text-primary transition-colors flex items-center justify-between">
+<span>Intellex</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-1">arrow_outward</span>
+</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            An AI-oriented knowledge workspace project currently under development, focusing on vector-based document retrieval and contextual intelligence.
+          </p>
+<!-- Rich Visual Component: Abstract Vector Knowledge Graph & Metrics -->
+<div class="relative w-full bg-surface-container-lowest rounded-lg p-4 overflow-hidden mt-1 shadow-inner">
+<div class="flex items-center justify-between pb-3 mb-2 font-code-sm text-code-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">hub</span>VECTOR GRAPH RETRIEVAL</span>
+<span class="text-primary font-medium">cosine: 0.941</span>
+</div>
+<!-- SVG Vector Knowledge Graph -->
+<div class="w-full h-32 flex items-center justify-center">
+<svg class="w-full h-full text-on-surface-variant select-none" fill="none" stroke="currentColor" viewbox="0 0 460 120">
+<!-- Links -->
+<path d="M 60 60 L 150 30" stroke="currentColor" stroke-dasharray="3,3" stroke-opacity="0.25"></path>
+<path d="M 60 60 L 150 90" stroke="currentColor" stroke-dasharray="3,3" stroke-opacity="0.25"></path>
+<path d="M 150 30 L 250 60" stroke="#22d3ee" stroke-opacity="0.5" stroke-width="1.5"></path>
+<path d="M 150 90 L 250 60" stroke="currentColor" stroke-opacity="0.3"></path>
+<path d="M 250 60 L 350 35" stroke="#22d3ee" stroke-opacity="0.8" stroke-width="2"></path>
+<path d="M 250 60 L 360 85" stroke="currentColor" stroke-opacity="0.2"></path>
+<path d="M 350 35 L 420 50" stroke="#22d3ee" stroke-opacity="0.9" stroke-width="2"></path>
+<!-- Nodes -->
+<circle cx="60" cy="60" fill="#1c2028" r="14" stroke="currentColor" stroke-opacity="0.4"></circle>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="9" text-anchor="middle" x="60" y="64">DOC</text>
+<circle cx="150" cy="30" fill="#1c2028" r="12" stroke="#22d3ee" stroke-opacity="0.6"></circle>
+<text fill="#8aebff" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="150" y="34">EMB</text>
+<circle cx="150" cy="90" fill="#1c2028" r="10" stroke="currentColor" stroke-opacity="0.3"></circle>
+<text fill="#bbc9cd" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="150" y="93">RAW</text>
+<circle cx="250" cy="60" fill="#1c2028" r="18" stroke="#22d3ee" stroke-width="1.5"></circle>
+<text fill="#22d3ee" font-family="JetBrains Mono" font-size="9" font-weight="600" text-anchor="middle" x="250" y="64">INDEX</text>
+<circle cx="350" cy="35" fill="#00363e" r="14" stroke="#2fd9f4" stroke-width="2"></circle>
+<text fill="#a2eeff" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="350" y="39">CTX</text>
+<circle cx="360" cy="85" fill="#1c2028" r="10" stroke="currentColor" stroke-opacity="0.3"></circle>
+<text fill="#bbc9cd" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="360" y="88">META</text>
+<circle cx="420" cy="50" fill="#22d3ee" r="16"></circle>
+<text fill="#00363e" font-family="JetBrains Mono" font-size="9" font-weight="700" text-anchor="middle" x="420" y="54">LLM</text>
+</svg>
+</div>
+<!-- Live Latency telemetry row -->
+<div class="grid grid-cols-3 gap-2 pt-2 text-center font-code-sm text-code-sm">
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Chunks</span>
+<span class="text-on-surface font-medium">1,024 dim</span>
+</div>
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Latency</span>
+<span class="text-primary font-medium">&lt; 38ms</span>
+</div>
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Engine</span>
+<span class="text-on-surface font-medium">Qdrant/FAISS</span>
+</div>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Python</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">RAG</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Vector Search</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">FastAPI</span>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between pt-6 mt-4">
+<div class="flex items-center gap-2">
+<a class="px-3.5 py-1.5 bg-surface-container text-on-surface font-label-md text-label-md rounded hover:bg-surface-container-high transition-colors flex items-center gap-1.5" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>GitHub</span>
+</a>
+<a class="px-3.5 py-1.5 bg-surface-container-high text-primary hover:text-on-primary hover:bg-primary-container font-label-md text-label-md rounded transition-colors flex items-center gap-1.5" href="#">
+<span>Case Study</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<span class="font-code-sm text-code-sm text-outline-variant">branch: dev</span>
+</div>
+</article>
+<!-- PROJECT 2: FastAPI Journey -->
+<article class="project-card group relative bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.6)]" data-category="backend">
+<div class="flex flex-col gap-4">
+<!-- Card Top Bar -->
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-secondary px-2 py-0.5 rounded bg-surface-container-high">PRJ-02</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">/fastapi-patterns</span>
+</div>
+<!-- Active Repository badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-primary-fixed-dim font-code-sm text-code-sm">
+<span class="h-2 w-2 rounded-full bg-primary-fixed-dim"></span>
+              Active Repository
+            </span>
+</div>
+<!-- Title & Category -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Backend Engineering</span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface group-hover:text-primary transition-colors flex items-center justify-between">
+<span>FastAPI Journey</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-1">arrow_outward</span>
+</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Backend development practice and application-building with FastAPI, exploring RESTful architectural patterns, asynchronous request handling, and API security.
+          </p>
+<!-- Rich Visual Component: Abstract API Gateway Pipeline Flow -->
+<div class="relative w-full bg-surface-container-lowest rounded-lg p-4 overflow-hidden mt-1 shadow-inner">
+<div class="flex items-center justify-between pb-3 mb-2 font-code-sm text-code-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">alt_route</span>ASYNC ROUTE PIPELINE</span>
+<span class="text-secondary font-medium">uvicorn: 24.1k rps</span>
+</div>
+<!-- Pipeline Visual Diagram -->
+<div class="w-full h-32 flex flex-col justify-center gap-3">
+<!-- Endpoint Route Mock Rows -->
+<div class="bg-surface-container p-2 rounded flex items-center justify-between font-code-sm text-code-sm">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-primary-container/20 text-primary font-semibold">GET</span>
+<span class="text-on-surface">/api/v1/auth/jwt</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant">Bearer Auth</span>
+<span class="text-primary font-medium">200 OK</span>
+</div>
+</div>
+<div class="bg-surface-container p-2 rounded flex items-center justify-between font-code-sm text-code-sm">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/30 text-secondary font-semibold">POST</span>
+<span class="text-on-surface">/api/v1/stream/async</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant">SSE / Yield</span>
+<span class="text-secondary font-medium">101 SW</span>
+</div>
+</div>
+<div class="bg-surface-container p-2 rounded flex items-center justify-between font-code-sm text-code-sm">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-semibold">MID</span>
+<span class="text-on-surface">Dependency Injection / CORS</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant">Pydantic v2</span>
+<span class="text-primary font-medium">Passed</span>
+</div>
+</div>
+</div>
+<!-- Telemetry strip -->
+<div class="grid grid-cols-3 gap-2 pt-3 text-center font-code-sm text-code-sm">
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Auth</span>
+<span class="text-on-surface font-medium">OAuth2/JWT</span>
+</div>
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Concurrency</span>
+<span class="text-secondary font-medium">asyncio event</span>
+</div>
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Schema</span>
+<span class="text-on-surface font-medium">OpenAPI 3.1</span>
+</div>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">FastAPI</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Python</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">REST APIs</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Asynchronous I/O</span>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between pt-6 mt-4">
+<div class="flex items-center gap-2">
+<a class="px-3.5 py-1.5 bg-surface-container text-on-surface font-label-md text-label-md rounded hover:bg-surface-container-high transition-colors flex items-center gap-1.5" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>GitHub Repository</span>
+</a>
+<a class="px-3.5 py-1.5 bg-surface-container-high text-primary hover:text-on-primary hover:bg-primary-container font-label-md text-label-md rounded transition-colors flex items-center gap-1.5" href="#">
+<span>View Architecture</span>
+<span class="material-symbols-outlined text-sm">schema</span>
+</a>
+</div>
+<span class="font-code-sm text-code-sm text-outline-variant">master</span>
+</div>
+</article>
+<!-- PROJECT 3: RAG Journey -->
+<article class="project-card group relative bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.6)]" data-category="learning">
+<div class="flex flex-col gap-4">
+<!-- Card Top Bar -->
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-primary px-2 py-0.5 rounded bg-surface-container-high">PRJ-03</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">/rag-experiments</span>
+</div>
+<!-- Active Exploration badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-code-sm text-code-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+              Active Exploration
+            </span>
+</div>
+<!-- Title & Category -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">AI Engineering / Learning</span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface group-hover:text-primary transition-colors flex items-center justify-between">
+<span>RAG Journey</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-1">arrow_outward</span>
+</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Exploring retrieval-augmented generation and related AI engineering concepts through hands-on learning, vector embeddings, and chunking strategies.
+          </p>
+<!-- Rich Visual Component: RAG Pipeline Chunking & Re-ranking Flowchart -->
+<div class="relative w-full bg-surface-container-lowest rounded-lg p-4 overflow-hidden mt-1 shadow-inner">
+<div class="flex items-center justify-between pb-3 mb-2 font-code-sm text-code-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">account_tree</span>RETRIEVAL &amp; RE-RANKING PIPELINE</span>
+<span class="text-primary font-medium">Top-K: 5 reranked</span>
+</div>
+<!-- Interactive pipeline steps diagram -->
+<div class="w-full h-32 flex items-center justify-between px-2">
+<!-- Step 1: Chunking -->
+<div class="flex flex-col items-center gap-1.5 text-center">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">splitscreen</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface">Chunking</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">512 token win</span>
+</div>
+<!-- Connector 1 -->
+<div class="flex-1 flex items-center justify-center px-1">
+<div class="h-0.5 w-full bg-primary/40 relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 border-t border-r border-primary"></div>
+</div>
+</div>
+<!-- Step 2: Dense Embedding -->
+<div class="flex flex-col items-center gap-1.5 text-center">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface">Embedding</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">OpenAI / HF</span>
+</div>
+<!-- Connector 2 -->
+<div class="flex-1 flex items-center justify-center px-1">
+<div class="h-0.5 w-full bg-primary/40 relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 border-t border-r border-primary"></div>
+</div>
+</div>
+<!-- Step 3: Cross-Encoder Re-rank -->
+<div class="flex flex-col items-center gap-1.5 text-center">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">filter_list</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface">Re-rank</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">Cohere / BGE</span>
+</div>
+<!-- Connector 3 -->
+<div class="flex-1 flex items-center justify-center px-1">
+<div class="h-0.5 w-full bg-primary/40 relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rotate-45 border-t border-r border-primary"></div>
+</div>
+</div>
+<!-- Step 4: Prompt Context Synthesis -->
+<div class="flex flex-col items-center gap-1.5 text-center">
+<div class="w-12 h-12 rounded bg-primary-container text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<span class="font-code-sm text-code-sm text-primary font-medium">Context</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">Synthesis</span>
+</div>
+</div>
+<!-- Telemetry strip -->
+<div class="grid grid-cols-3 gap-2 pt-3 text-center font-code-sm text-code-sm">
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Embeddings</span>
+<span class="text-on-surface font-medium">text-emb-3-small</span>
+</div>
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Overlap</span>
+<span class="text-primary font-medium">10% sliding</span>
+</div>
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Precision</span>
+<span class="text-on-surface font-medium">MRR @ 0.88</span>
+</div>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">RAG</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Vector Databases</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Python</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">LLM Orchestration</span>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between pt-6 mt-4">
+<div class="flex items-center gap-2">
+<a class="px-3.5 py-1.5 bg-surface-container text-on-surface font-label-md text-label-md rounded hover:bg-surface-container-high transition-colors flex items-center gap-1.5" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>GitHub Repository</span>
+</a>
+<a class="px-3.5 py-1.5 bg-surface-container-high text-primary hover:text-on-primary hover:bg-primary-container font-label-md text-label-md rounded transition-colors flex items-center gap-1.5" href="#">
+<span>Explore Pipeline</span>
+<span class="material-symbols-outlined text-sm">flowchart</span>
+</a>
+</div>
+<span class="font-code-sm text-code-sm text-outline-variant">main</span>
+</div>
+</article>
+<!-- PROJECT 4: MY_DSA_JOURNEY -->
+<article class="project-card group relative bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.6)]" data-category="learning">
+<div class="flex flex-col gap-4">
+<!-- Card Top Bar -->
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-tertiary-fixed-dim px-2 py-0.5 rounded bg-surface-container-high">PRJ-04</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">/dsa-vault</span>
+</div>
+<!-- Ongoing Practice badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary-fixed font-code-sm text-code-sm">
+<span class="h-2 w-2 rounded-full bg-tertiary-fixed-dim"></span>
+              Ongoing Practice
+            </span>
+</div>
+<!-- Title & Category -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Computer Science Fundamentals</span>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface group-hover:text-primary transition-colors flex items-center justify-between">
+<span>MY_DSA_JOURNEY</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-transform group-hover:translate-x-1">arrow_outward</span>
+</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Structured problem-solving, data structures, and algorithmic complexity practice in software engineering fundamentals.
+          </p>
+<!-- Rich Visual Component: Tree & Graph Algorithm Visualization -->
+<div class="relative w-full bg-surface-container-lowest rounded-lg p-4 overflow-hidden mt-1 shadow-inner">
+<div class="flex items-center justify-between pb-3 mb-2 font-code-sm text-code-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-tertiary">polyline</span>BINARY SEARCH TREE &amp; GRAPH DFS</span>
+<span class="text-tertiary font-medium">O(log N) average</span>
+</div>
+<!-- Tree Visualization SVG -->
+<div class="w-full h-32 flex items-center justify-center">
+<svg class="w-full h-full select-none" fill="none" stroke="currentColor" viewbox="0 0 460 120">
+<!-- Branches -->
+<path d="M 230 20 L 140 55" stroke="#3c494c" stroke-width="1.5"></path>
+<path d="M 230 20 L 320 55" stroke="#ffb13b" stroke-width="2"></path>
+<path d="M 140 55 L 80 95" stroke="#3c494c" stroke-width="1.5"></path>
+<path d="M 140 55 L 190 95" stroke="#3c494c" stroke-width="1.5"></path>
+<path d="M 320 55 L 270 95" stroke="#3c494c" stroke-width="1.5"></path>
+<path d="M 320 55 L 380 95" stroke="#ffb13b" stroke-width="2"></path>
+<!-- Root Node -->
+<circle cx="230" cy="20" fill="#1c2028" r="14" stroke="#ffb13b" stroke-width="1.5"></circle>
+<text fill="#ffd6a3" font-family="JetBrains Mono" font-size="9" font-weight="600" text-anchor="middle" x="230" y="24">50</text>
+<!-- Layer 1 Nodes -->
+<circle cx="140" cy="55" fill="#1c2028" r="12" stroke="#859397" stroke-width="1"></circle>
+<text fill="#dfe2ee" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="140" y="58">25</text>
+<circle cx="320" cy="55" fill="#462b00" r="13" stroke="#ffb13b" stroke-width="2"></circle>
+<text fill="#ffd6a3" font-family="JetBrains Mono" font-size="8" font-weight="bold" text-anchor="middle" x="320" y="59">75</text>
+<!-- Layer 2 Nodes -->
+<circle cx="80" cy="95" fill="#1c2028" r="10" stroke="#3c494c"></circle>
+<text fill="#bbc9cd" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="80" y="98">12</text>
+<circle cx="190" cy="95" fill="#1c2028" r="10" stroke="#3c494c"></circle>
+<text fill="#bbc9cd" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="190" y="98">37</text>
+<circle cx="270" cy="95" fill="#1c2028" r="10" stroke="#3c494c"></circle>
+<text fill="#bbc9cd" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="270" y="98">62</text>
+<circle cx="380" cy="95" fill="#ffb13b" r="12"></circle>
+<text fill="#2a1800" font-family="JetBrains Mono" font-size="8" font-weight="bold" text-anchor="middle" x="380" y="99">88</text>
+</svg>
+</div>
+<!-- Telemetry strip -->
+<div class="grid grid-cols-3 gap-2 pt-3 text-center font-code-sm text-code-sm">
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Solved</span>
+<span class="text-on-surface font-medium">180+ Patterns</span>
+</div>
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Domain</span>
+<span class="text-tertiary-fixed-dim font-medium">Graphs &amp; DP</span>
+</div>
+<div class="bg-surface-container py-1 rounded">
+<span class="text-on-surface-variant block">Efficiency</span>
+<span class="text-on-surface font-medium">O(1) Space opt</span>
+</div>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Data Structures</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Algorithms</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Problem Solving</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Python</span>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex items-center justify-between pt-6 mt-4">
+<div class="flex items-center gap-2">
+<a class="px-3.5 py-1.5 bg-surface-container text-on-surface font-label-md text-label-md rounded hover:bg-surface-container-high transition-colors flex items-center gap-1.5" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>GitHub Repository</span>
+</a>
+</div>
+<span class="font-code-sm text-code-sm text-outline-variant">main</span>
+</div>
+</article>
+</div>
+<!-- Architectural Deep Dive / Context Banner -->
+<div class="mt-16 bg-surface-container-low rounded-xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-60 h-60 bg-primary-container/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container rounded-lg text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-2xl">layers</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Standard Architectural Stack</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            All projects incorporate asynchronous Python concurrency, strong typing via Pydantic, modular routing, and clean vector/relational data separation.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<a class="font-label-md text-label-md px-4 py-2 bg-surface-container-high hover:bg-surface-variant text-on-surface rounded flex items-center gap-2 transition-colors" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-base">terminal</span>
+<span>Inspect GitHub Commits</span>
+</a>
+</div>
+</div>
+<!-- Call to Action Banner -->
+<section class="mt-20 mb-8 bg-surface-container rounded-2xl p-space-xl shadow-2xl relative overflow-hidden">
+<!-- Decorative background wave / grid snippet -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/10 via-transparent to-secondary-container/10 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+<div class="flex flex-col gap-2 max-w-2xl">
+<div class="flex items-center gap-2 font-code-sm text-code-sm text-primary">
+<span class="material-symbols-outlined text-sm">chat</span>
+<span>NEXT DISCUSSIONS &amp; COLLABORATION</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">
+            Interested in collaborating or discussing technical architectures?
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Currently focusing on AI Application Engineering, RAG deployment paradigms, and high-throughput backend services. Let's build together.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-4 shrink-0">
+<a class="px-space-lg py-3 rounded bg-primary-container text-on-primary font-label-md text-label-md font-semibold transition-all hover:bg-primary shadow-[0_0_20px_rgba(34,211,238,0.3)] flex items-center gap-2" href="mailto:profatta3@gmail.com">
+<span class="material-symbols-outlined text-lg">mail</span>
+<span>Get in Touch</span>
+</a>
+<a class="px-space-lg py-3 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-all flex items-center gap-2" data-path="overview" href="#">
+<span class="material-symbols-outlined text-lg">home</span>
+<span>Back to Home</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  function filterProjects(type) {
+    const cards = document.querySelectorAll('.project-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    // Update active button state
+    buttons.forEach(btn => {
+      btn.className = "filter-btn px-4 py-1.5 rounded font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high";
+    });
+
+    const activeBtn = document.getElementById(`filter-${type}`);
+    if (activeBtn) {
+      activeBtn.className = "filter-btn active-filter px-4 py-1.5 rounded font-label-md text-label-md transition-all flex items-center gap-1.5 bg-primary-container text-on-primary font-medium shadow-[0_0_16px_rgba(34,211,238,0.25)]";
+    }
+
+    // Toggle card visibility
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      if (type === 'all' || category === type) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.4)] py-space-xl"><div class="max-w-[1200px] mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start gap-space-xs"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Atta Ur Rehman</span><span class="font-code-sm text-code-sm text-on-surface-variant">—</span><span class="font-code-sm text-code-sm text-primary">AI Application Engineer Intern @ Hexoforge LLC</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Atta Ur Rehman. Engineered for high-throughput intelligent systems.</p></div><div class="flex items-center gap-space-md font-label-md text-label-md"><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="https://github.com/Atta-Ur-Rehman05" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-base">code</span>GitHub</a><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="https://www.linkedin.com/in/atta-ur-rehman-11a351309/" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-base">hub</span>LinkedIn</a><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="mailto:profatta3@gmail.com"><span class="material-symbols-outlined text-base">mail</span>Email</a></div></div></footer></body></html>
