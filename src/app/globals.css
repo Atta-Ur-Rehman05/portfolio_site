@@ -460,9 +460,22 @@ a:hover {
   gap: 55px;
 }
 .about-body {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
   font-size: 13px;
   color: var(--muted);
   margin-top: 20px;
+}
+.about-portrait {
+  display: block;
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  object-position: center 28%;
+  border: 1px solid var(--muted);
+  border-radius: 12px;
 }
 .about-body p + p {
   margin-top: 13px;
@@ -1888,6 +1901,7 @@ a:hover {
   }
   .about-body {
     font-size: 12px;
+    grid-template-columns: 1fr;
   }
   .experience-header {
     padding: 18px;
@@ -2266,6 +2280,10 @@ a:hover {
   }
   .about-body {
     font-size: 13px;
+  }
+  .about-portrait {
+    width: 128px;
+    height: 128px;
   }
   .about-grid {
     padding-top: 0;

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { profile, projects, skillGroups, learning } from "../data/content";
 import { HeroDiagram } from "./Diagrams";
 import { ProjectCard } from "./ProjectCard";
@@ -49,9 +50,19 @@ export function HomePage() {
             into practical solutions.
           </h2>
           <div className="about-body">
-            {profile.about.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
+            <Image
+              className="about-portrait"
+              src="/atta%20photo.jpg"
+              alt="Portrait of Atta Ur Rehman"
+              width={398}
+              height={558}
+              sizes="(max-width: 640px) 128px, 112px"
+            />
+            <div className="about-text">
+              {profile.about.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
           </div>
           <div className="about-footer">
             <span>▸ Undergrad 2024–2028</span>
