@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. In PowerShell with restricted script execution, use `npm.cmd` instead of `npm`.
+Open [https://portfolio-site-lilac-eight-30.vercel.app]. In PowerShell with restricted script execution, use `npm.cmd` instead of `npm`.
 
 ## Build and verify
 
