@@ -193,7 +193,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                 <p>{project.motivation}</p>
               </div>
               <div>
-                <h3>Engineering Approach</h3>
+                <h3>Architectural Philosophy</h3>
                 <p>
                   Learn through focused implementation and keep the difference
                   between planned architecture and completed functionality
